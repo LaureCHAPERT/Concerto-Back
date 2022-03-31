@@ -6,15 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+    /**
+     * @Route("/back/region/", name="back_region_")
+     */
 class RegionController extends AbstractController
 {
     /**
-     * @Route("/region", name="app_region")
+     * @Route("", name="list")
      */
-    public function index(): Response
+    public function list(): Response
     {
-        return $this->render('region/index.html.twig', [
-            'controller_name' => 'RegionController',
-        ]);
+        return $this->render('region/index.html.twig');
     }
 }

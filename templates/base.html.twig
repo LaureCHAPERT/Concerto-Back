@@ -26,10 +26,10 @@
                 <div class="container"><a class="navbar-brand d-lg text-expanded" href="">CONCERT'O</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"><span class="visually-hidden"></span><span class="navbar-toggler-icon"></span></button>
                     <div id="navbarResponsive" class="collapse navbar-collapse"><a href="store.html"></a>
                         <ul class="navbar-nav mx-auto">
-                            <li class="nav-item"><a class="nav-link" href="">Accueil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Genres musicaux</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Régions</a></li>
-                            <li class="nav-item"><a class="nav-link" href="">Tous les événements</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ path('back_home') }}">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ path('back_genre_list') }}">Genres musicaux</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ path('back_region_list') }}">Régions</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ path('back_event_list') }}">Tous les événements</a></li>
                         </ul>
                     </div>
                 </div>

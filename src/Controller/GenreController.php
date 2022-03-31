@@ -6,15 +6,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+    /**
+     * @Route("/back/genre", name="back_genre_")
+     */
 class GenreController extends AbstractController
 {
     /**
-     * @Route("/genre", name="app_genre")
+     * @Route("", name="list")
      */
-    public function index(): Response
+    public function list(): Response
     {
-        return $this->render('genre/index.html.twig', [
-            'controller_name' => 'GenreController',
-        ]);
+        return $this->render('genre/index.html.twig');
     }
 }
