@@ -1,14 +1,48 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EventController!{% endblock %}
+{% block title %}Concert'O - Evénements{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Liste des événements</h1>
-</div>
+<h1>Liste des événements</h1>
+
+<a class="btn btn-sm btn-success" href="">Ajouter</a>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Date</th>
+            <th>Billetterie</th>
+            <th>Image</th>
+            <th>Nom informatique</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <a class="btn btn-sm btn-primary" href="">Afficher</a>
+                <a class="btn btn-sm btn-warning" href="">Editer</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="9">Aucun enregistrement trouvé</td>
+        </tr>
+
+    </tbody>
+</table>
 {% endblock %}
