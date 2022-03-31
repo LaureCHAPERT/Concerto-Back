@@ -69,6 +69,12 @@ class Event
      */
     private $genres;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="events")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $region;
+
     public function __construct()
     {
         $this->genres = new ArrayCollection();
@@ -207,6 +213,18 @@ class Event
     public function removeGenre(Genre $genre): self
     {
         $this->genres->removeElement($genre);
+
+        return $this;
+    }
+
+    public function getRegion(): ?Region
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?Region $region): self
+    {
+        $this->region = $region;
 
         return $this;
     }
