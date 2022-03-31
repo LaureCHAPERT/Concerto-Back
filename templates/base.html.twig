@@ -2,6 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <!-- Bootstrap icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
@@ -14,6 +21,21 @@
         {% endblock %}
     </head>
     <body>
+        <header>
+            <nav id="mainNav" class="navbar navbar-dark navbar-expand-lg bg-dark py-lg-4" style="padding: 23px 0px;">
+                <div class="container"><a class="navbar-brand d-lg text-expanded" href="">CONCERT'O</a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"><span class="visually-hidden"></span><span class="navbar-toggler-icon"></span></button>
+                    <div id="navbarResponsive" class="collapse navbar-collapse"><a href="store.html"></a>
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item"><a class="nav-link" href="">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Genres musicaux</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Régions</a></li>
+                            <li class="nav-item"><a class="nav-link" href="">Tous les événements</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
         {% block body %}{% endblock %}
     </body>
 </html>
