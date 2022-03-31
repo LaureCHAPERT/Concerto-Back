@@ -8,31 +8,30 @@
 
 <a class="btn btn-sm btn-success" href="">Ajouter</a>
 
-<table class="table">
+<table class="table-responsive table-striped table-hover col-12">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th class="text-end">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text-end">
+                    <a class="btn btn-sm btn-primary" href="">Afficher</a>
+                    <a class="btn btn-sm btn-warning" href="">Editer</a>
+                </td>
+            </tr>
 
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Nom</th>
-            <th>Image</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-                <a class="btn btn-sm btn-primary" href="">Afficher</a>
-                <a class="btn btn-sm btn-warning" href="">Editer</a>
-            </td>
-        </tr>
+            <tr>
+                <td colspan="4">Aucun enregistrement trouvé</td>
+            </tr>
 
-        <tr>
-            <td colspan="4">Aucun enregistrement trouvé</td>
-        </tr>
-
-    </tbody>
+        </tbody>
 </table>
 {% endblock %}
