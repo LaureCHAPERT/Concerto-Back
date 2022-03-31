@@ -19,6 +19,7 @@ class Event
      * @ORM\Column(type="integer")
      * @Groups("get_events_list")
      * @Groups("get_events_item")
+     * @Groups("get_regions_item")
      */
     private $id;
 
@@ -26,6 +27,7 @@ class Event
      * @ORM\Column(type="string", length=50)
      * @Groups("get_events_list")
      * @Groups("get_events_item")
+     * @Groups("get_regions_item")
      */
     private $name;
 
@@ -47,6 +49,7 @@ class Event
      * @ORM\Column(type="decimal", precision=5, scale=2)
      * @Groups("get_events_list")
      * @Groups("get_events_item")
+     * @Groups("get_regions_item")
      */
     private $price;
 
@@ -54,6 +57,7 @@ class Event
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups("get_events_list")
      * @Groups("get_events_item")
+     * @Groups("get_regions_item")
      */
     private $image;
 
@@ -61,6 +65,7 @@ class Event
      * @ORM\Column(type="string", length=255)
      * @Groups("get_events_list")
      * @Groups("get_events_item")
+     * @Groups("get_regions_item")
      */
     private $linkTicketing;
 
