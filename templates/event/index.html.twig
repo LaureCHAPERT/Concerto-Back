@@ -1,23 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Event index{% endblock %}
+{% block title %}Liste des événements{% endblock %}
 
 {% block body %}
-    <h1>Event index</h1>
+    <h1>Liste des événements</h1>
+
+    <a class="btn btn-sm btn-success" href="{{ path('back_event_create') }}">Ajouter</a>
+
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Nom</th>
                 <th>Description</th>
                 <th>Date</th>
-                <th>Price</th>
+                <th>Prix</th>
                 <th>Image</th>
-                <th>LinkTicketing</th>
-                <th>Slug</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
+                <th>Billetterie</th>
+                <th>Nom/slug</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -32,19 +33,16 @@
                 <td>{{ event.image }}</td>
                 <td>{{ event.linkTicketing }}</td>
                 <td>{{ event.slug }}</td>
-                <td>{{ event.createdAt ? event.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.updatedAt ? event.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('back_event_update', {'id': event.id}) }}">edit</a>
+                    <a  class="btn btn-sm btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
+                    <a class="btn btn-sm btn-danger" href="{{ path('back_event_delete', {'id': event.id}) }}">Supprimer</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="11">no records found</td>
+                <td colspan="11">Aucun enregistrement trouvé</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('back_event_create') }}">Create new</a>
 {% endblock %}

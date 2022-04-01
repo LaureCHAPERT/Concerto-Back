@@ -19,8 +19,6 @@ class EventType extends AbstractType
             ->add('image')
             ->add('linkTicketing')
             ->add('slug')
-            ->add('createdAt')
-            ->add('updatedAt')
             ->add('genres')
             ->add('region')
             ->add('user')
