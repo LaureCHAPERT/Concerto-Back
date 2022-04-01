@@ -11,12 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/event")
+ * @Route("/back/event")
  */
 class EventController extends AbstractController
 {
     /**
-     * @Route("/", name="app_event_index", methods={"GET"})
+     * @Route("", name="back_event_index", methods={"GET"})
      */
     public function index(EventRepository $eventRepository): Response
     {
@@ -26,7 +26,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="app_event_new", methods={"GET", "POST"})
+     * @Route("/create", name="back_event_create", methods={"GET", "POST"})
      */
     public function new(Request $request, EventRepository $eventRepository): Response
     {
@@ -36,7 +36,7 @@ class EventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $eventRepository->add($event);
-            return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('event/new.html.twig', [
@@ -46,17 +46,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_event_show", methods={"GET"})
-     */
-    public function show(Event $event): Response
-    {
-        return $this->render('event/show.html.twig', [
-            'event' => $event,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="app_event_edit", methods={"GET", "POST"})
+     * @Route("/{id}/update", name="back_event_update", methods={"GET", "POST"})
      */
     public function edit(Request $request, Event $event, EventRepository $eventRepository): Response
     {
@@ -65,7 +55,7 @@ class EventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $eventRepository->add($event);
-            return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('event/edit.html.twig', [
@@ -75,7 +65,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_event_delete", methods={"POST"})
+     * @Route("/{id}", name="back_event_delete", methods={"POST"})
      */
     public function delete(Request $request, Event $event, EventRepository $eventRepository): Response
     {
@@ -83,6 +73,6 @@ class EventController extends AbstractController
             $eventRepository->remove($event);
         }
 
-        return $this->redirectToRoute('app_event_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
     }
 }
