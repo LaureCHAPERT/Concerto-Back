@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\GenreRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,16 +17,19 @@ class Genre
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups("get_genres_list")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups("get_genres_list")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("get_genres_list")
      */
     private $image;
 
@@ -41,6 +45,7 @@ class Genre
 
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="genres")
+     * @Groups("get_genres_list")
      */
     private $events;
 
