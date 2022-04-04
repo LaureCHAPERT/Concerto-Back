@@ -84,6 +84,7 @@ class Event
     public function __construct()
     {
         $this->genres = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
     }
 
     public function __toString()
