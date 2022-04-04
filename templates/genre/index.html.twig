@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listes des genres{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <nav class="nav navbar">
+            <div class="col-sm-6">
+                <h1>Liste des genres :</h1>
+            </div>   
+            <a class="btn-lg btn btn-success" href="{{ path('back_genre_create') }}">Ajouter</a>
+        </nav>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Image</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for genre in genres %}
+            <tr>
+                <td>{{ genre.id }}</td>
+                <td>{{ genre.name }}</td>
+                <td>{{ genre.image }}</td>
+                <td>
+                    <a  class="btn btn-sm btn-warning" href="{{ path('back_genre_update', {'id': genre.id}) }}">Editer</a>
+                    <a class="btn btn-sm btn-danger" href="{{ path('back_genre_delete', {'id': genre.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('back_genre_create') }}">Create new</a>
+{% endblock %}
