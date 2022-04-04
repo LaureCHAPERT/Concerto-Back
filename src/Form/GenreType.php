@@ -14,9 +14,6 @@ class GenreType extends AbstractType
         $builder
             ->add('name')
             ->add('image')
-            ->add('createdAt')
-            ->add('updatedAt')
-            ->add('events')
         ;
     }
 

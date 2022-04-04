@@ -10,43 +10,36 @@
             </div>   
             <a class="btn-lg btn btn-success" href="{{ path('back_event_create') }}">Ajouter</a>
         </nav>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Prix</th>
+                    <th>Image</th>
+                    <th>Billetterie</th>
+                    <th class="col-sm-2">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.id }}</td>
+                    <td>{{ event.name }}</td>
+                    <td class='wrap-text'>{{ event.description }}</td>
+                    <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ event.price }}</td>
+                    <td>{{ event.image }}</td>
+                    <td>{{ event.linkTicketing }}</td>
+                    <td>
+                        <a  class="btn btn-sm btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
+                        <a class="btn btn-sm btn-danger" href="{{ path('back_event_delete', {'id': event.id}) }}">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Date</th>
-                <th>Prix</th>
-                <th>Image</th>
-                <th>Billetterie</th>
-                <th>Nom/slug</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td>{{ event.id }}</td>
-                <td>{{ event.name }}</td>
-                <td>{{ event.description }}</td>
-                <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ event.price }}</td>
-                <td>{{ event.image }}</td>
-                <td>{{ event.linkTicketing }}</td>
-                <td>{{ event.slug }}</td>
-                <td>
-                    <a  class="btn btn-sm btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
-                    <a class="btn btn-sm btn-danger" href="{{ path('back_event_delete', {'id': event.id}) }}">Supprimer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="11">Aucun enregistrement trouvé</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 {% endblock %}
