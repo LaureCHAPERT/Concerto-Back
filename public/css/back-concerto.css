@@ -8,3 +8,8 @@ h1 {
     text-overflow: ellipsis;
     max-width: 15ch;
 }
+
+.buttons {
+    margin-right: 1em;
+    margin-bottom: auto;
+}

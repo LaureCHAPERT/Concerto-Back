@@ -16,9 +16,8 @@
                 <tr>
                     <th>Id</th>
                     <th>Nom</th>
-                    <th>Image</th>
-                    <th class='col-1'>Actions</th>
-                    <th class='col-1'></th>
+                    <th class="d-none d-md-table-cell">Image</th>
+                    <th class='col-1 text-end'>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,11 +25,9 @@
                 <tr>
                     <td>{{ genre.id }}</td>
                     <td>{{ genre.name }}</td>
-                    <td>{{ genre.image }}</td>
-                    <td>
-                        <a  class="btn btn-sm btn-warning" href="{{ path('back_genre_update', {'id': genre.id}) }}">Editer</a>
-                    </td>
-                    <td>
+                    <td class="d-none d-md-table-cell">{{ genre.image }}</td>
+                    <td class= "d-md-flex">
+                        <a  class="buttons btn btn btn-warning" href="{{ path('back_genre_update', {'id': genre.id}) }}">Editer</a>
                         {{ include('genre/_delete_form.html.twig') }}
                     </td>
                 </tr>
