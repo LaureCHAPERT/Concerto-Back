@@ -19,6 +19,7 @@ class Region
      * @ORM\Column(type="integer")
      * @Groups("get_regions_list")
      * @Groups("get_regions_item")
+     * @groups("get_events_item")
      */
     private $id;
 
@@ -26,6 +27,7 @@ class Region
      * @ORM\Column(type="string", length=50)
      * @Groups("get_regions_list")
      * @Groups("get_regions_item")
+     * @groups("get_events_item")
      */
     private $name;
 
@@ -33,6 +35,7 @@ class Region
      * @ORM\Column(type="string", length=255)
      * @Groups("get_regions_list")
      * @Groups("get_regions_item")
+     * @groups("get_events_item")
      */
     private $image;
 
