@@ -2,7 +2,6 @@
 
 namespace App\Repository;
 
-use App\Entity\Event;
 use App\Entity\Region;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\OptimisticLockException;
@@ -62,30 +61,6 @@ class RegionRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    /**
-    * 
-    */
-    /*
-    public function findAllEventsByOneRegion(int $regionId)
-    {
-        $conn = $this->getEntityManager()->getConnection();
-
-        $sql = 
-            'SELECT `e`.`id`, `e`.`name`, `e`.`image`, `e`.`price`
-            FROM `event` e
-            INNER JOIN `region` r ON `e`.`region_id` = `r`.`id`
-            WHERE `r`.`id` = :id'
-            ;
-
-        $stmt = $conn->prepare($sql);
-
-        $resultSet = $stmt->executeQuery(['id' => $regionId]);
-        
-        return $resultSet->fetchAllAssociative();
-    }
-    */
-
     
     public function findAllEventsByOneRegion(int $regionId)
     {

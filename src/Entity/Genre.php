@@ -18,18 +18,21 @@ class Genre
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      * @Groups("get_genres_list")
+     * @Groups("get_genres_item")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
      * @Groups("get_genres_list")
+     * @Groups("get_genres_item")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups("get_genres_list")
+     * @Groups("get_genres_item")
      */
     private $image;
 
@@ -46,6 +49,7 @@ class Genre
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="genres")
      * @Groups("get_genres_list")
+     * @Groups("get_genres_item")
      */
     private $events;
 

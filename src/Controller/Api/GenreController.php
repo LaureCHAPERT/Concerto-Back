@@ -39,7 +39,7 @@ class GenreController extends AbstractController
     /**
      * Get one item
      * 
-     * @Route("/{id}", name="item", methods={"GET"}, requirements={"id": "\d+"})
+     * @Route("/{id}/events", name="item", methods={"GET"}, requirements={"id": "\d+"})
      * @return Response
      */
     public function getItem(int $id, GenreRepository $genreRepository): Response
