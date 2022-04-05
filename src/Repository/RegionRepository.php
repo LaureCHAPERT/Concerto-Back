@@ -52,7 +52,7 @@ class RegionRepository extends ServiceEntityRepository
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+            ->andWhere('r.id = :val')
             ->setParameter('val', $value)
             ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
@@ -62,15 +62,22 @@ class RegionRepository extends ServiceEntityRepository
     }
     */
 
-    /*
-    public function findOneBySomeField($value): ?Region
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
+    /**
+    * 
     */
+    public function findAllEventsByOneRegion($regionId)
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT *
+            FROM `event`
+            INNER JOIN `region` ON `event`.`region_id` = `region`.`id`
+            WHERE `region`.`id` = :id'
+            );
+
+        $query->setParameter('id', $regionId);
+        
+        return $query->getResult($regionId);
+    }
 }

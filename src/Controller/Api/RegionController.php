@@ -45,14 +45,14 @@ class RegionController extends AbstractController
     public function getItem(int $id, RegionRepository $regionRepository): Response
     {
         // Data recovery (Repository)
-        $region = $regionRepository->find($id);
+        $region = $regionRepository->findAllEventsByOneRegion($id);
 
         if (is_null($region))
         {
             $data = 
             [
                 'error' => true,
-                'message' => 'Evénement non trouvé',
+                'message' => 'Non trouvé',
             ];
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }

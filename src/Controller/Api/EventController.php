@@ -52,7 +52,7 @@ class EventController extends AbstractController
             $data = 
             [
                 'error' => true,
-                'message' => 'Evénement non trouvé',
+                'message' => 'Non trouvé',
             ];
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }
