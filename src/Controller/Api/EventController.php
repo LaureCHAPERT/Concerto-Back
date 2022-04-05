@@ -81,7 +81,7 @@ class EventController extends AbstractController
         // Data recovery (Repository)
 
         $event = $eventRepository->findEventsByCriteria($region_id, $genre_id);
-        if (is_null($event))
+        if (empty($event))
         {
             $data = 
             [
