@@ -65,19 +65,37 @@ class RegionRepository extends ServiceEntityRepository
     /**
     * 
     */
-    public function findAllEventsByOneRegion($regionId)
+    public function findAllEventsByOneRegion(int $regionId)
     {
-        $entityManager = $this->getEntityManager();
-
-        $query = $entityManager->createQuery(
-            'SELECT *
-            FROM `event`
-            INNER JOIN `region` ON `event`.`region_id` = `region`.`id`
-            WHERE `region`.`id` = :id'
-            );
-
-        $query->setParameter('id', $regionId);
         
-        return $query->getResult($regionId);
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 
+            'SELECT `e`.`id`, `e`.`name`, `e`.`image`, `e`.`price`
+            FROM `event` e
+            INNER JOIN `region` r ON `e`.`region_id` = `r`.`id`
+            WHERE `r`.`id` = :id'
+            ;
+
+        $stmt = $conn->prepare($sql);
+        $resultSet = $stmt->executeQuery(['id' => $regionId]);
+        
+        return $resultSet->fetchAllAssociative();
     }
+
+    /*
+    public function findAllEventsByOneRegion(int $regionId)
+    {
+        // 
+        $qb = $this->createQueryBuilder('r')
+            ->select(array('r','e'))
+            ->innerJoin('Event', 'e','WITH','e.region = r.id')
+            ->where('r.id = :regionId')
+            ->setParameter('regionId', $regionId);
+            
+        $query = $qb->getQuery();
+        
+        return $query->execute();
+    }
+    */
 }
