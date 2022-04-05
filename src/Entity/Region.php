@@ -64,6 +64,7 @@ class Region
     {
         $this->events = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
     }
 
     public function __toString()
