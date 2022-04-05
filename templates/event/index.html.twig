@@ -15,13 +15,12 @@
                 <tr class="flex-grow-1 justify-content-evenly">
                     <th>Id</th>
                     <th>Nom</th>
-                    <th>Description</th>
-                    <th>Date</th>
-                    <th>Prix</th>
-                    <th>Image</th>
-                    <th>Billetterie</th>
-                    <th>Actions</th>
-                    <th></th>
+                    <th class="d-none d-md-table-cell">Description</th>
+                    <th class="d-none d-xxl-table-cell">Date</th>
+                    <th class="d-none d-md-table-cell">Prix</th>
+                    <th class="d-none d-lg-table-cell">Image</th>
+                    <th class="d-none d-lg-table-cell">Billetterie</th>
+                    <th class="col-1 text-end">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,15 +28,13 @@
                 <tr>
                     <td>{{ event.id }}</td>
                     <td>{{ event.name }}</td>
-                    <td class='wrap-text'>{{ event.description }}</td>
-                    <td>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
-                    <td>{{ event.price }}</td>
-                    <td>{{ event.image }}</td>
-                    <td>{{ event.linkTicketing }}</td>
-                    <td>
-                        <a  class="btn btn-sm btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
-                    </td>
-                    <td>
+                    <td class='wrap-text d-none d-md-table-cell'>{{ event.description }}</td>
+                    <td class="d-none d-xxl-table-cell">{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</td>
+                    <td class="d-none d-md-table-cell">{{ event.price }}</td>
+                    <td class="d-none d-lg-table-cell">{{ event.image }}</td>
+                    <td class="d-none d-lg-table-cell">{{ event.linkTicketing }}</td>
+                    <td class= "d-md-flex">
+                        <a  class="buttons btn btn btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
                         {{ include('event/_delete_form.html.twig') }}
                     </td>
                 </tr>
