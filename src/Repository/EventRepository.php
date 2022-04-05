@@ -45,6 +45,28 @@ class EventRepository extends ServiceEntityRepository
         }
     }
 
+    public function findEventsByCriteria(int $region_id , int $genre_id )
+    {
+
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = 
+            'SELECT `event`.`name`, `event`.`image`, `event`.`price`, `event`.`link_ticketing`, `genre`.`name` as `genre_name`, `region`.`name` as `region_name`
+            FROM `event`
+            INNER JOIN `event_genre` ON `event`.`id` = `event_id` 
+            INNER JOIN `genre` ON `event_genre`.`genre_id` = `genre`.`id`
+            INNER JOIN `region` ON `event`.`region_id` = `region`.`id`
+            WHERE `event_genre`.`genre_id` = :genre_id
+            AND `region`.`id` = :region_id'
+            ;
+
+            $stmt = $conn->prepare($sql);
+
+            $resultSet = $stmt->executeQuery(['genre_id' => $genre_id, 'region_id' => $region_id]);
+
+            return $resultSet->fetchAllAssociative();
+    }
+
     // /**
     //  * @return Event[] Returns an array of Event objects
     //  */
