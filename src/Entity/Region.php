@@ -17,19 +17,22 @@ class Region
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("get_regions_list", "get_regions_item")
+     * @Groups("get_regions_list")
+     * @Groups("get_regions_item")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Groups("get_regions_list", "get_regions_item")
+     * @Groups("get_regions_list")
+     * @Groups("get_regions_item")
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("get_regions_list", "get_regions_item")
+     * @Groups("get_regions_list")
+     * @Groups("get_regions_item")
      */
     private $image;
 
@@ -45,13 +48,15 @@ class Region
 
     /**
      * @ORM\OneToMany(targetEntity=Event::class, mappedBy="region")
-     * @Groups("get_regions_list", "get_regions_item")
+     * @Groups("get_regions_list")
+     * @Groups("get_regions_item")
      */
     private $events;
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="regions")
-     * @Groups("get_regions_list", "get_regions_item")
+     * @Groups("get_regions_list")
+     * @Groups("get_regions_item")
      */
     private $users;
 
