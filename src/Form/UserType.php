@@ -17,7 +17,7 @@ class UserType extends AbstractType
             ->add('image')
             ->add('email')
             ->add('password')
-            ->add('role', ChoiceType::class, [
+            ->add('roles', ChoiceType::class, [
                 'label' => 'Rôle',
                 'choices'=> [
                     'Catalog Manager' => 'Catalog-Manager',
