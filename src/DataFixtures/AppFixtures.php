@@ -31,10 +31,10 @@ class AppFixtures extends Fixture
         ];
 
         $regions = [
-            'Auvergne-Rhônes- Alpes',
+            'Auvergne-Rhônes-Alpes',
             'Bourgogne-Franche-Comté',
             'Bretagne',
-            'Centre- Val De Loire',
+            'Centre-Val De Loire',
             'Corse',
             'Grand-Est',
             'Hauts-De-France',
@@ -47,9 +47,9 @@ class AppFixtures extends Fixture
         ];
 
         $roles = [
-            'Catalog-Manager',
-            'Moderator',
-            'Admin',
+            'ROLE_MANAGER',
+            'ROLE_MODERATOR',
+            'ROLE_ADMIN',
         ];
 
         $genreObjects = [] ;
@@ -84,7 +84,7 @@ class AppFixtures extends Fixture
             $user->setEmail($username.'@gmail.com');
             $user->setPassword($username);
             $randomIndex = array_rand($roles);
-            $user->setRole($roles[$randomIndex]);
+            $user->setRoles([$roles[$randomIndex]]);
             $user->setActive(1);
             $randomIndex2 = array_rand($regionObjects);
             $user->setRegions($regionObjects[$randomIndex2]);
