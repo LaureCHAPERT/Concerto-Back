@@ -42,6 +42,7 @@ security:
         - { path: ^/back/(event)/(.*), roles: ROLE_MANAGER }
         - { path: ^/back/(genre)/, role: ROLE_MODERATOR }
         - { path: ^/back/(user), roles: ROLE_ADMIN }
+        - { path: ^back/login, roles: PUBLIC_ACCESS }
 
     role_hierarchy:
         # Role Moderator inherits the Catalog role
