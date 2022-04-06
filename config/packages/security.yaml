@@ -5,26 +5,49 @@ security:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
     # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
     providers:
-        users_in_memory: { memory: null }
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             lazy: true
-            provider: users_in_memory
+            provider: app_user_provider
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
+            
+            form_login:
+                # "login" is the name of the route created previously
+                login_path: app_login
+                check_path: app_login
+                default_target_path: back_event_index
+                always_use_default_target_path: true
+
+            logout:
+                path: app_logout
+                target: app_login
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+
+        - { path: ^/back/(event), roles: ROLE_MANAGER }
+        - { path: ^/back/(event)/(.*), roles: ROLE_MANAGER }
+        - { path: ^/back/(genre)/, role: ROLE_MODERATOR }
+        - { path: ^/back/(user), roles: ROLE_ADMIN }
+
+    role_hierarchy:
+        # Role Moderator inherits the Catalog role
+        ROLE_MODERATOR: ROLE_MANAGER
+        # Role Admin inherits the Moderator role
+        ROLE_ADMIN: ROLE_MODERATOR
 
 when@test:
     security:
