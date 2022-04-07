@@ -20,6 +20,10 @@
             <label for="password" class="form-label">Mot de passe</label>
             <input type="password" class="form-control" id="password" name="_password">
         </div>
+        
+        {# https://symfony.com/doc/5.4/security.html#form_login-csrf #}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
         <button type="submit" class="btn btn-primary">Connexion</button>
     </form>
 </div>
