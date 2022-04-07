@@ -40,9 +40,9 @@ class AppFixtures extends Fixture
         $regions = [
             'Auvergne-Rhônes-Alpes' => 'https://cdn.pixabay.com/photo/2017/06/20/15/48/mont-blanc-2423512_960_720.jpg',
             'Bourgogne-Franche-Comté' => 'https://images.pexels.com/photos/96633/pexels-photo-96633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-            'Bretagne' => 'https://cdn.pixabay.com/photo/2020/03/28/05/45/flag-4975773_960_720.jpg',
+            'Bretagne' => 'https://cdn.pixabay.com/photo/2014/11/10/05/49/carnac-stones-525066__340.jpg',
             'Centre-Val De Loire' => 'https://cdn.pixabay.com/photo/2017/06/19/22/00/loire-2420962_960_720.jpg',
-            'Corse' => 'https://cdn.pixabay.com/photo/2012/04/10/23/13/corsica-26907_960_720.png',
+            'Corse' => 'https://cdn.pixabay.com/photo/2018/02/28/18/47/waters-3188723_960_720.jpg',
             'Grand-Est' => 'https://cdn.pixabay.com/photo/2017/07/21/14/24/storks-2525893_960_720.jpg',
             'Hauts-De-France' => 'https://cdn.pixabay.com/photo/2017/08/20/00/16/lille-2660311_960_720.jpg',
             'Ile-De-France' => 'https://cdn.pixabay.com/photo/2018/04/25/09/26/eiffel-tower-3349075_960_720.jpg',
