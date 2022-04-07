@@ -37,6 +37,8 @@ class Event
      * @ORM\Column(type="text")
      * @Groups("get_events_list")
      * @Groups("get_events_item")
+     * @Groups("get_regions_item")
+     * @Groups("get_genres_item")
      */
     private $description;
 

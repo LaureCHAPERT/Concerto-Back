@@ -11,9 +11,16 @@ use DateTimeImmutable;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    public function __construct(UserPasswordHasherInterface $passwordHasher)
+    {
+        $this->hasher = $passwordHasher;
+    }
+
+
     public function load(ObjectManager $manager): void
     {
         // $product = new Product();
@@ -31,19 +38,19 @@ class AppFixtures extends Fixture
         ];
 
         $regions = [
-            'Auvergne-Rhônes-Alpes',
-            'Bourgogne-Franche-Comté',
-            'Bretagne',
-            'Centre-Val De Loire',
-            'Corse',
-            'Grand-Est',
-            'Hauts-De-France',
-            'Ile-De-France',
-            'Normandie',
-            'Nouvelle-Aquitaine',
-            'Occitanie',
-            'Pays de la Loire',
-            'Provence-Alpes-Côte-D’Azur',
+            'Auvergne-Rhônes-Alpes' => 'https://cdn.pixabay.com/photo/2017/06/20/15/48/mont-blanc-2423512_960_720.jpg',
+            'Bourgogne-Franche-Comté' => 'https://images.pexels.com/photos/96633/pexels-photo-96633.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            'Bretagne' => 'https://cdn.pixabay.com/photo/2020/03/28/05/45/flag-4975773_960_720.jpg',
+            'Centre-Val De Loire' => 'https://cdn.pixabay.com/photo/2017/06/19/22/00/loire-2420962_960_720.jpg',
+            'Corse' => 'https://cdn.pixabay.com/photo/2012/04/10/23/13/corsica-26907_960_720.png',
+            'Grand-Est' => 'https://cdn.pixabay.com/photo/2017/07/21/14/24/storks-2525893_960_720.jpg',
+            'Hauts-De-France' => 'https://cdn.pixabay.com/photo/2017/08/20/00/16/lille-2660311_960_720.jpg',
+            'Ile-De-France' => 'https://cdn.pixabay.com/photo/2018/04/25/09/26/eiffel-tower-3349075_960_720.jpg',
+            'Normandie' => 'https://cdn.pixabay.com/photo/2012/08/24/10/48/mont-st-michel-54806_960_720.jpg',
+            'Nouvelle-Aquitaine' => 'https://cdn.pixabay.com/photo/2020/02/02/15/07/wine-4813260_960_720.jpg',
+            'Occitanie' => 'https://cdn.pixabay.com/photo/2017/10/01/10/43/castres-2804947_960_720.jpg',
+            'Pays de la Loire' => 'https://cdn.pixabay.com/photo/2018/03/18/15/14/nantes-3237084_960_720.jpg',
+            'Provence-Alpes-Côte-D’Azur' => 'https://cdn.pixabay.com/photo/2020/06/26/21/06/summer-5343970_960_720.jpg',
         ];
 
         $roles = [
@@ -52,23 +59,33 @@ class AppFixtures extends Fixture
             'ROLE_ADMIN',
         ];
 
+        $genres= [
+            'Rock' => 'https://cdn.pixabay.com/photo/2017/10/07/00/26/hand-2825166_960_720.jpg',
+            'Classique' => 'https://cdn.pixabay.com/photo/2014/05/21/15/47/piano-349928_960_720.jpg',
+            'Reggae' => 'https://cdn.pixabay.com/photo/2016/12/18/04/16/rasta-1915004_960_720.jpg',
+            'Pop' =>'https://cdn.pixabay.com/photo/2012/12/14/11/36/music-69990_960_720.jpg',
+            'Funk' => 'https://cdn.pixabay.com/photo/2022/02/08/09/47/funk-7001092_960_720.png',
+            'Hip-Hop' => 'https://cdn.pixabay.com/photo/2014/03/21/10/19/dancers-291958_960_720.jpg',
+            'Electro' => 'https://cdn.pixabay.com/photo/2015/04/13/13/37/audio-720589_960_720.jpg',
+            'Alternative' => 'https://cdn.pixabay.com/photo/2016/08/15/16/48/vinyl-1595847_960_720.jpg',
+        ];
         $genreObjects = [] ;
-        foreach($genres as $currentGenre) 
+        foreach($genres as $currentGenre => $currentImage) 
         {
             $genre = new Genre;
             $genre->setName($currentGenre);
-            $genre->setImage('image'.$currentGenre.'.png');
+            $genre->setImage($currentImage);
             $genre->setCreatedAt(new DateTimeImmutable());
             $genreObjects[] = $genre;
             $manager->persist($genre);
         }
 
         $regionObjects = [];
-        foreach($regions as $currentRegion) 
+        foreach($regions as $currentRegion => $currentImage) 
         {
             $region = new Region;
             $region->setName($currentRegion);
-            $region->setImage('image'.$currentRegion.'.png');
+            $region->setImage($currentImage);
             $region->setCreatedAt(new DateTimeImmutable());
             $regionObjects[] = $region;
             $manager->persist($region);
@@ -82,7 +99,11 @@ class AppFixtures extends Fixture
             $user->setUsername($username);
             $user->setImage('image'.$username.'.png');
             $user->setEmail($username.'@gmail.com');
-            $user->setPassword($username);
+            $hashedPassword = $this->hasher->hashPassword(
+                $user,
+                $username,
+            );
+            $user->setPassword($hashedPassword);
             $randomIndex = array_rand($roles);
             $user->setRoles([$roles[$randomIndex]]);
             $user->setActive(1);
@@ -93,7 +114,7 @@ class AppFixtures extends Fixture
             $manager->persist($user);
         }
 
-        for ($i = 1; $i <= 20; $i++)
+        for ($i = 1; $i <= 100; $i++)
         {
             $event = new Event;
             $name = $faker->word();
