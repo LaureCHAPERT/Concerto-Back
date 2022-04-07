@@ -33,7 +33,7 @@
                     <td class="d-none d-md-table-cell">{{ event.price }}</td>
                     <td class="d-none d-xl-table-cell">{{ event.image }}</td>
                     <td class="d-none d-lg-table-cell">{{ event.linkTicketing }}</td>
-                    <td class= "d-flex">
+                    <td class= "d-sm-flex">
                         <a  class="buttons btn btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
                         {{ include('event/_delete_form.html.twig') }}
                     </td>
