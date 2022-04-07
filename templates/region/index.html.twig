@@ -1,41 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Region index{% endblock %}
+{% block title %}Liste des régions{% endblock %}
 
 {% block body %}
-    <h1>Region index</h1>
+    <div class="container">
+        <nav class="nav navbar">
+            <div class="col-sm-6">
+                <h1>Liste des régions</h1>
+            </div>   
+            <a class="btn btn-success" href="{{ path('back_region_create') }}">Ajouter</a>
+        </nav>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>CreatedAt</th>
-                <th>UpdatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for region in regions %}
-            <tr>
-                <td>{{ region.id }}</td>
-                <td>{{ region.name }}</td>
-                <td>{{ region.image }}</td>
-                <td>{{ region.createdAt ? region.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ region.updatedAt ? region.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('app_region_show', {'id': region.id}) }}">show</a>
-                    <a href="{{ path('app_region_edit', {'id': region.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <a href="{{ path('app_region_new') }}">Create new</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th class="d-none d-xxl-table-cell">Image</th>
+                    <th class="col-1 text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for region in regions %}
+                <tr>
+                    <td>{{ region.id }}</td>
+                    <td>{{ region.name }}</td>
+                    <td class="d-none d-lg-table-cell">{{ region.image }}</td>
+                    <td class="d-sm-flex">
+                <a  class="buttons btn btn-warning" href="{{ path('back_region_update', {'id': region.id}) }}">Editer</a>
+                {{ include('region/_delete_form.html.twig') }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

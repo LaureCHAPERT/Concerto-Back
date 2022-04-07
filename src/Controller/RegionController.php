@@ -39,7 +39,7 @@ class RegionController extends AbstractController
             return $this->redirectToRoute('back_region_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('region/new.html.twig', [
+        return $this->renderForm('region/create.html.twig', [
             'region' => $region,
             'form' => $form,
         ]);
@@ -58,7 +58,7 @@ class RegionController extends AbstractController
             return $this->redirectToRoute('back_region_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('region/edit.html.twig', [
+        return $this->renderForm('region/update.html.twig', [
             'region' => $region,
             'form' => $form,
         ]);
