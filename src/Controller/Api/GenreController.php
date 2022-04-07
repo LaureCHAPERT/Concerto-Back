@@ -22,7 +22,7 @@ class GenreController extends AbstractController
     public function getGenresCollection(GenreRepository $genreRepository): Response
     {
         // Data recovery (Repository)
-        $genresList = $genreRepository->findAll();
+        $genresList = $genreRepository->findAllGenres();
 
         return $this->json(
             // Data to serialize => Convert to JSON

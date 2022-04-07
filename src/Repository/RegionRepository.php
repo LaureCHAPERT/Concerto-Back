@@ -79,4 +79,17 @@ class RegionRepository extends ServiceEntityRepository
         return $query->execute();
     }
     
+    public function findAllRegions()
+    {
+        // creation of a custom query
+        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
+        $qb = $this->createQueryBuilder('r')
+            ->select('r.id', 'r.name', 'r.image');
+        
+        // query retrieval
+        $query = $qb->getQuery();
+        
+        // query execute
+        return $query->execute();
+    }
 }
