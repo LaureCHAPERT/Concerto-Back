@@ -22,7 +22,7 @@ class RegionController extends AbstractController
     public function getRegionsCollection(RegionRepository $regionRepository): Response
     {
         // Data recovery (Repository)
-        $regionsList = $regionRepository->findAll();
+        $regionsList = $regionRepository->findAllRegions();
 
         return $this->json(
             // Data to serialize => Convert to JSON
