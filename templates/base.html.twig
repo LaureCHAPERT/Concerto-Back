@@ -26,11 +26,11 @@
                     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
                     <div id="navbarResponsive" class="collapse navbar-collapse">
                         <ul class="navbar-nav">
+                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <li class="nav-item"><a class="nav-link" href="">Accueil</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_event_index') }}">Evénements</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_genre_index') }}">Genres</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_user_index') }}">Utilisateurs</a></li>
-                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
                             {% else %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('app_login')}}">Connexion</a></li>  

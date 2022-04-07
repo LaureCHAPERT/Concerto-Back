@@ -34,7 +34,7 @@
                     <td class="d-none d-md-table-cell wrap-text">{{ user.password }}</td>
                     <td class="d-none d-lg-table-cell">{{ user.roles|join(', ') }}</td>
                     <td class="d-none d-lg-table-cell">{{ user.active }}</td>
-                    <td class= "d-flex">
+                    <td class= "d-sm-flex">
                         <a  class="buttons btn btn-warning" href="{{ path('back_user_update', {'id': user.id}) }}">Editer</a>
                         {{ include('user/_delete_form.html.twig') }}
                     </td>
