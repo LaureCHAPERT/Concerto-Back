@@ -45,7 +45,7 @@ class Genre
 
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="genres")
-     * @Groups("get_genres_list", "get_genres_item")
+     * @Groups({"get_genres_list", "get_genres_item"})
      */
     private $events;
 
