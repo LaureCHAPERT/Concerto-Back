@@ -18,11 +18,24 @@ class EventController extends AbstractController
     /**
      * @Route("", name="back_event_index", methods={"GET"})
      */
-    public function index(EventRepository $eventRepository): Response
+    public function index(EventRepository $eventRepository, Request $request): Response
     {
-        return $this->render('event/index.html.twig', [
-            'events' => $eventRepository->findAll(),
-        ]);
+        // tutorial link for pagination
+        // https://www.youtube.com/watch?v=PnFrb2kYRCg&t=2418s
+
+        // Setting the number of items per page
+        $limit = 10;
+
+        // Retrieve page number
+        $page = (int)$request->query->get("page", 1); 
+
+        // Retrieving page events
+        $events = $eventRepository->getPaginatedEvents($page, $limit);
+
+        // Retrieving the total number of events
+        $total = $eventRepository->getTotalEvents();
+
+        return $this->render('event/index.html.twig', compact('events', 'total', 'limit', 'page'));
     }
 
     /**
