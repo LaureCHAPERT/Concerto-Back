@@ -115,7 +115,7 @@ class EventRepository extends ServiceEntityRepository
     {
         // creation of a custom query
         // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
-        $qb = $this->createQueryBuilder('event')
+        $qb = $this->createQueryBuilder('event')        
             ->delete('user', 'u')
             ->join('e.genres', 'g')
             ->join('e.region', 'r')

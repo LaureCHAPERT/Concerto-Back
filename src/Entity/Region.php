@@ -51,7 +51,6 @@ class Region
 
     /**
      * @ORM\OneToMany(targetEntity=User::class, mappedBy="regions")
-     * @Groups({"get_regions_list", "get_regions_item"})
      */
     private $users;
 
