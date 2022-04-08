@@ -29,7 +29,14 @@ class Event
 
     /**
      * @ORM\Column(type="text")
+<<<<<<< HEAD
      * @Groups({"get_events_list", "get_events_item"})
+=======
+     * @Groups("get_events_list")
+     * @Groups("get_events_item")
+     * @Groups("get_regions_item")
+     * @Groups("get_genres_item")
+>>>>>>> develop
      */
     private $description;
 

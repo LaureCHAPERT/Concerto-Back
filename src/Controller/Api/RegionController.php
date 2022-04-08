@@ -45,7 +45,7 @@ class RegionController extends AbstractController
     public function getItem(int $id, RegionRepository $regionRepository): Response
     {
         // Data recovery (Repository)
-        $region = $regionRepository->findAllEventsByOneRegion($id);
+        $region = $regionRepository->find($id);
 
         if (is_null($region))
         {

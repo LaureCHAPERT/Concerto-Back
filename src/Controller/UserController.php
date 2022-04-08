@@ -8,6 +8,7 @@ use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -28,13 +29,15 @@ class UserController extends AbstractController
     /**
      * @Route("/create", name="back_user_create", methods={"GET", "POST"})
      */
-    public function create(Request $request, UserRepository $userRepository): Response
+    public function create(Request $request, UserRepository $userRepository, UserPasswordHasherInterface $userPasswordHasherInterface): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $hashedPassword = $userPasswordHasherInterface->hashPassword($user, $user->getPassword());
+            $user->setPassword($hashedPassword);
             $userRepository->add($user);
             return $this->redirectToRoute('back_user_index', [], Response::HTTP_SEE_OTHER);
         }

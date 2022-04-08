@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LoginController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Veuillez vous connecter</h1>
+
+    <form action="{{ path('app_login') }}" method="post">
+        <div class="mb-3">
+            <label for="username" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="username" name="_username" value="{{ last_username }}">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="password" name="_password">
+        </div>
+        
+        {# https://symfony.com/doc/5.4/security.html#form_login-csrf #}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+        <button type="submit" class="btn btn-primary">Connexion</button>
+    </form>
+</div>
+{% endblock %}
