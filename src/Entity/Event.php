@@ -17,67 +17,49 @@ class Event
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
-     * @Groups("get_regions_item")
-     * @Groups("get_genres_item")
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
-     * @Groups("get_regions_item")
-     * @Groups("get_genres_item")
+     * @Groups({"get_events_list", "get_events_item", "get_genres_item"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
+     * @Groups({"get_events_list", "get_events_item"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
+     * @Groups({"get_events_list", "get_events_item"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="decimal", precision=5, scale=2)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
-     * @Groups("get_regions_item")
-     * @Groups("get_genres_item")
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
      */
     private $price;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
-     * @Groups("get_regions_item")
-     * @Groups("get_genres_item")
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
-     * @Groups("get_regions_item")
-     * @Groups("get_genres_item")
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
      */
     private $linkTicketing;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
+     * @Groups({"get_events_list", "get_events_item"})
      */
     private $slug;
 
@@ -93,24 +75,21 @@ class Event
 
     /**
      * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="events")
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
+     * @Groups({"get_events_list", "get_events_item"})
      */
     private $genres;
 
     /**
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
+     * @Groups({"get_events_list", "get_events_item"})
      */
     private $region;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
+     * @Groups({"get_events_list", "get_events_item"})
      */
     private $user;
 
