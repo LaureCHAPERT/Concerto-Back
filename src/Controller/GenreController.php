@@ -18,11 +18,24 @@ class GenreController extends AbstractController
     /**
      * @Route("/", name="back_genre_index", methods={"GET"})
      */
-    public function index(GenreRepository $genreRepository): Response
+    public function index(GenreRepository $genreRepository, Request $request): Response
     {
-        return $this->render('genre/index.html.twig', [
-            'genres' => $genreRepository->findAll(),
-        ]);
+        // tutorial link for pagination
+        // https://www.youtube.com/watch?v=PnFrb2kYRCg&t=2418s
+
+        // Setting the number of items per page
+        $limit = 10;
+
+        // Retrieve page number
+        $page = (int)$request->query->get("page", 1); 
+
+        // Retrieving page genres
+        $genres = $genreRepository->getPaginatedGenres($page, $limit);
+
+        // Retrieving the total number of genres
+        $total = $genreRepository->getTotalGenres();
+
+        return $this->render('genre/index.html.twig', compact('genres', 'total', 'limit', 'page'));
     }
 
     /**

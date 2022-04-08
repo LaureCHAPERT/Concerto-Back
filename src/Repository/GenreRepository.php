@@ -44,6 +44,53 @@ class GenreRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+    
+    public function findAllGenres()
+    {
+        // creation of a custom query
+        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
+        $qb = $this->createQueryBuilder('g')
+        ->select('g.id', 'g.name', 'g.image');
+        
+        // query retrieval
+        $query = $qb->getQuery();
+        
+        // query execute
+        return $query->execute();
+    }
+
+    /**
+     * Return all genres per page
+     * 
+     * @return void 
+     */
+    public function getPaginatedGenres($page, $limit)
+    {
+        $query = $this->createQueryBuilder('g') // g = Genre
+            ->orderBy('g.createdAt')
+            // Defines the number of the first element to be retrieved
+            ->setFirstResult(($page * $limit) - $limit)
+            // Defines the maximum number of genres per page
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Returns number of genres
+     *
+     * @return void
+     */
+    public function getTotalGenres()
+    {
+        $query = $this->createQueryBuilder('g') // g = Genre
+            ->select('COUNT(g)')
+        ;
+
+        // For result, only return base type, not arrays, not objects
+        return $query->getQuery()->getSingleScalarResult();
+    }    
 
     // /**
     //  * @return Genre[] Returns an array of Genre objects
@@ -73,18 +120,5 @@ class GenreRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    public function findAllGenres()
-    {
-        // creation of a custom query
-        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
-        $qb = $this->createQueryBuilder('g')
-            ->select('g.id', 'g.name', 'g.image');
-        
-        // query retrieval
-        $query = $qb->getQuery();
-        
-        // query execute
-        return $query->execute();
-    }
+    
 }
