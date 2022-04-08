@@ -67,6 +67,39 @@ class EventRepository extends ServiceEntityRepository
             return $resultSet->fetchAllAssociative();
     }
 
+    /**
+     * Return all events per page
+     * 
+     * @return void 
+     */
+    public function getPaginatedEvents($page, $limit)
+    {
+        $query = $this->createQueryBuilder('e') // e = Event
+            ->orderBy('e.createdAt')
+            // Defines the number of the first element to be retrieved
+            ->setFirstResult(($page * $limit) - $limit)
+            // Defines the maximum number of events per page
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Returns number of events
+     *
+     * @return void
+     */
+    public function getTotalEvents()
+    {
+        $query = $this->createQueryBuilder('e') // e = Event
+            ->select('COUNT(e)')
+        ;
+
+        // For result, only return base type, not arrays, not objects
+        return $query->getQuery()->getSingleScalarResult();
+    }
+
     // /**
     //  * @return Event[] Returns an array of Event objects
     //  */
