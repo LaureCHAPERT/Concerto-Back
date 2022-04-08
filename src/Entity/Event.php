@@ -29,20 +29,13 @@ class Event
 
     /**
      * @ORM\Column(type="text")
-<<<<<<< HEAD
-     * @Groups({"get_events_list", "get_events_item"})
-=======
-     * @Groups("get_events_list")
-     * @Groups("get_events_item")
-     * @Groups("get_regions_item")
-     * @Groups("get_genres_item")
->>>>>>> develop
+     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"get_events_list", "get_events_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
      */
     private $date;
 
