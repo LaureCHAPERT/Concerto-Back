@@ -96,7 +96,6 @@ class Event
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"get_events_list", "get_events_item"})
      */
     private $user;
 
