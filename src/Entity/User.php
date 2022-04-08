@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -23,32 +24,38 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups({"get_user_item"})
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"get_user_item"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_user_item"})
      */
     private $email;
 
     /**
      * @var string The hashed password
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_user_item"})
      */
     private $password;
 
     /**
      * @ORM\Column(type="json")
+     * @Groups({"get_user_item"})
      */
     private $roles = [];
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"get_user_item"})
      */
     private $active;
 
@@ -64,6 +71,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     /**
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="users")
+     * @Groups({"get_user_item"})
      */
     private $regions;
 
