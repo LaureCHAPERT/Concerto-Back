@@ -123,7 +123,7 @@ class AppFixtures extends Fixture
             $event->setDescription($faker->text());
             $event->setDate($faker->dateTimeBetween('now', '+1 year'));
             $event->setPrice($faker->randomNumber(3, false));
-            $event->setImage('https://picsum.photos/id/' . ( $i + 1 ) . '/200/300');
+            $event->setImage('https://cdn.pixabay.com/photo/2022/03/25/19/24/waterfall-7091641_960_720.jpg');
             $event->setLinkTicketing('https://www.fnac.com/');
             $text = preg_replace('~[^\pL\d]+~u', $divider, $name);
             $slug = strtolower($text);
