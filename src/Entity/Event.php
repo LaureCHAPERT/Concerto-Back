@@ -35,7 +35,7 @@ class Event
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"get_events_list", "get_events_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
      */
     private $date;
 
