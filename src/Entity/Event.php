@@ -23,7 +23,7 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Groups({"get_events_list", "get_events_item", "get_genres_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item"})
      */
     private $name;
 
