@@ -57,6 +57,14 @@ class GenreController extends AbstractController
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }
 
+        $count = count($genre->getEvents());
+        $genre = [
+
+            "genre" => $genre,
+            "count" => $count
+
+            ];
+            
         return $this->json(
 
             // Data to serialize => Convert to JSON

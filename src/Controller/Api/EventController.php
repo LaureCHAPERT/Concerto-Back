@@ -81,6 +81,7 @@ class EventController extends AbstractController
         // Data recovery (Repository)
 
         $event = $eventRepository->findEventsByCriteria($region_id, $genre_id);
+
         if (empty($event))
         {
             $data = 
@@ -91,6 +92,13 @@ class EventController extends AbstractController
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }
 
+        $count = count([$event]);
+        $event = [
+
+            "event" => $event,
+            "count" => $count
+
+            ];
         return $this->json(
 
             // Data to serialize => Convert to JSON
