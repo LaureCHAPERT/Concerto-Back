@@ -17,7 +17,7 @@ class EventController extends AbstractController
     /**
      * Get events collection
      * 
-     * @Route("", name="list", methods={"GET"})
+     * @Route("/home", name="home", methods={"GET"})
      * @return Response
      */
     public function getEventsCollectionForHomepage(EventRepository $eventRepository): Response
@@ -64,7 +64,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * Get one item
+     * Get one Event
      * 
      * @Route("/{id}", name="item", methods={"GET"}, requirements={"id": "\d+"})
      * @return Response
@@ -93,11 +93,11 @@ class EventController extends AbstractController
             // Response headers to add (none)
             [],
             // The groups to be used by the Serializer
-            ['groups' => "get_events_item"]);
+            ['groups' => "get_search_item"]);
     }
 
     /**
-     * Get  items
+     * Get items by criteria
      * 
      * @Route("/region/{region_id}/genre/{genre_id}", name="search", methods={"GET"})
      * @return Response
@@ -127,6 +127,6 @@ class EventController extends AbstractController
             // Response headers to add (none)
             [],
             // The groups to be used by the Serializer
-            ['groups' => "get_events_item"]);
+            ['groups' => "get_search_item"]);
     }
 }

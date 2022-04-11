@@ -45,30 +45,25 @@ class EventRepository extends ServiceEntityRepository
         }
     }
 
-    public function findEventsByCriteria(int $region_id , int $genre_id )
+    public function findEventsByCriteria(int $region_id , string $genre_id )
     {
-
-        $conn = $this->getEntityManager()->getConnection();
-
-        $sql = 
-            'SELECT `event`.`id`,`event`.`name`, `event`.`image`, `event`.`price`, `event`.`description`, `event`.`link_ticketing`, `genre`.`name` as `genre_name`, `region`.`name` as `region_name`
-            FROM `event`
-            INNER JOIN `event_genre` ON `event`.`id` = `event_id` 
-            INNER JOIN `genre` ON `event_genre`.`genre_id` = `genre`.`id`
-            INNER JOIN `region` ON `event`.`region_id` = `region`.`id`
-            WHERE `event_genre`.`genre_id` = :genre_id
-            AND `region`.`id` = :region_id'
-            ;
-
-            $stmt = $conn->prepare($sql);
-
-            $resultSet = $stmt->executeQuery(['genre_id' => $genre_id, 'region_id' => $region_id]);
-
-            return $resultSet->fetchAllAssociative();
+            
+            $qb = $this->createQueryBuilder('e')        
+            ->join('e.genres', 'g')
+            ->join('e.region', 'r')
+            ->where('r = :regionId AND :genreId IN (g)')
+            ->setParameter('genreId', $genre_id)
+            ->setParameter('regionId', $region_id);
+        
+            // query retrieval
+            $query = $qb->getQuery();
+            
+            // query execute
+            return $query->execute();
     }
 
     /**
-     * Return all events where region = Ile-de-France / order by creation date / limit them by 3
+     * Return all events for API where region = Ile-de-France / order by creation date / limit them by 3
      *
      * @return void
      */
@@ -76,7 +71,7 @@ class EventRepository extends ServiceEntityRepository
     {
         $query = $this->createQueryBuilder('e') // e = Event
         ->where('e.region = 177')
-        ->orderBy('e.createdAt')
+        ->orderBy('e.date', 'DESC')
         ->setMaxResults($eventsLimit)
         ;
 
@@ -88,11 +83,11 @@ class EventRepository extends ServiceEntityRepository
      *
      * @return void
      */
-    public function findAllForHomepageByRegionOrderByCreation()
+    public function findAllForHomepageByRegionOrderByDate()
     {
         $query = $this->createQueryBuilder('e') // e = Event
         ->where('e.region = 177')
-        ->orderBy('e.createdAt')
+        ->orderBy('e.date', 'DESC')
         ;
 
         return $query->getQuery()->getResult();
@@ -106,7 +101,7 @@ class EventRepository extends ServiceEntityRepository
     public function getPaginatedEvents($page, $limit)
     {
         $query = $this->createQueryBuilder('e') // e = Event
-            ->orderBy('e.createdAt')
+            ->orderBy('e.date', 'DESC')
             // Defines the number of the first element to be retrieved
             ->setFirstResult(($page * $limit) - $limit)
             // Defines the maximum number of events per page
@@ -159,38 +154,5 @@ class EventRepository extends ServiceEntityRepository
         ;
     }
     */
-        
-    public function findHome()
-    {
-        // creation of a custom query
-        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
-        $qb = $this->createQueryBuilder('e')
-            ->select('e.id', 'e.name', 'e.image', 'e.description')
-            ->setMaxResults(3);
-        
-        // query retrieval
-        $query = $qb->getQuery();
-        
-        // query execute
-        return $query->execute();
-    }
-
-    public function findEvent(int $event_Id)
-    {
-        // creation of a custom query
-        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
-        $qb = $this->createQueryBuilder('event')        
-            ->delete('user', 'u')
-            ->join('e.genres', 'g')
-            ->join('e.region', 'r')
-            ->where('e.id = :eventId')
-            ->setParameter('eventId', $event_Id);
-        
-        // query retrieval
-        $query = $qb->getQuery();
-        
-        // query execute
-        return $query->execute();
-    }
 }
 

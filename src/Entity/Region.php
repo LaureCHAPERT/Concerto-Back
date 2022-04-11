@@ -17,13 +17,13 @@ class Region
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"get_regions_list", "get_regions_item", "get_events_item"})
+     * @Groups({"get_regions_list", "get_regions_item", "get_events_item", "get_search_item"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Groups({"get_regions_list", "get_regions_item", "get_events_item"})
+     * @Groups({"get_regions_list", "get_regions_item", "get_events_item", "get_search_item"})
      */
     private $name;
 

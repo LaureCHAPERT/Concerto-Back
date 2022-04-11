@@ -18,37 +18,37 @@ class Event
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_search_item", "get_genres_item", "get_events_home", "get_regions_item"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
      */
     private $description;
 
     /**
-     * @ORM\Column(type="date")
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
+     * @ORM\Column(type="datetime")
+     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_search_item", "get_regions_item", "get_events_home"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="decimal", precision=5, scale=2)
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
      */
     private $price;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
      */
     private $image;
 
@@ -60,7 +60,7 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Groups({"get_events_list", "get_events_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_search_item", "get_events_home"})
      */
     private $slug;
 
@@ -76,14 +76,14 @@ class Event
 
     /**
      * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="events")
-     * @Groups({"get_events_list", "get_events_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_search_item"})
      */
     private $genres;
 
     /**
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
-     * @Groups({"get_events_list", "get_events_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_search_item"})
      */
     private $region;
 
