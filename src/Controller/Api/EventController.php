@@ -140,7 +140,7 @@ class EventController extends AbstractController
     {
         // Data recovery (Repository)
 
-        $event = $eventRepository->findHome();
+        $event = $eventRepository->findAllForHomepageByLimit(3);
         if (is_null($event))
         {
             $data = 
