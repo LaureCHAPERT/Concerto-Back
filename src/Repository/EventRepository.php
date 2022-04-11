@@ -45,26 +45,21 @@ class EventRepository extends ServiceEntityRepository
         }
     }
 
-    public function findEventsByCriteria(int $region_id , int $genre_id )
+    public function findEventsByCriteria(int $region_id , string $genre_id )
     {
-
-        $conn = $this->getEntityManager()->getConnection();
-
-        $sql = 
-            'SELECT `event`.`id`,`event`.`name`, `event`.`image`, `event`.`price`, `event`.`description`, `event`.`link_ticketing`, `genre`.`name` as `genre_name`, `region`.`name` as `region_name`
-            FROM `event`
-            INNER JOIN `event_genre` ON `event`.`id` = `event_id` 
-            INNER JOIN `genre` ON `event_genre`.`genre_id` = `genre`.`id`
-            INNER JOIN `region` ON `event`.`region_id` = `region`.`id`
-            WHERE `event_genre`.`genre_id` = :genre_id
-            AND `region`.`id` = :region_id'
-            ;
-
-            $stmt = $conn->prepare($sql);
-
-            $resultSet = $stmt->executeQuery(['genre_id' => $genre_id, 'region_id' => $region_id]);
-
-            return $resultSet->fetchAllAssociative();
+            
+            $qb = $this->createQueryBuilder('e')        
+            ->join('e.genres', 'g')
+            ->join('e.region', 'r')
+            ->where('r = :regionId AND :genreId IN (g)')
+            ->setParameter('genreId', $genre_id)
+            ->setParameter('regionId', $region_id);
+        
+            // query retrieval
+            $query = $qb->getQuery();
+            
+            // query execute
+            return $query->execute();
     }
 
     /**

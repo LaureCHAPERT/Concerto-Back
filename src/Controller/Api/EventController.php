@@ -93,7 +93,7 @@ class EventController extends AbstractController
             // Response headers to add (none)
             [],
             // The groups to be used by the Serializer
-            ['groups' => "get_events_item"]);
+            ['groups' => "get_search_item"]);
     }
 
     /**
