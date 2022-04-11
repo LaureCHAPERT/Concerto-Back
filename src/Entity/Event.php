@@ -99,7 +99,7 @@ class Event
     private $active;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="time", nullable=true)
      * @Groups({"get_events_list", "get_events_item", "get_events_home"})
      */
     private $hour;
