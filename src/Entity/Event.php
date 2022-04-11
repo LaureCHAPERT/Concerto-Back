@@ -98,6 +98,12 @@ class Event
      */
     private $active;
 
+    /**
+     * @ORM\Column(type="time")
+     * @Groups({"get_events_list", "get_events_item", "get_events_home"})
+     */
+    private $hour;
+
     public function __construct()
     {
         $this->genres = new ArrayCollection();
@@ -278,6 +284,18 @@ class Event
     public function setActive(int $active): self
     {
         $this->active = $active;
+
+        return $this;
+    }
+
+    public function getHour(): ?\DateTimeInterface
+    {
+        return $this->hour;
+    }
+
+    public function setHour(\DateTimeInterface $hour): self
+    {
+        $this->hour = $hour;
 
         return $this;
     }
