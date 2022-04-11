@@ -20,6 +20,32 @@ class EventController extends AbstractController
      * @Route("", name="list", methods={"GET"})
      * @return Response
      */
+    public function getEventsCollectionForHomepage(EventRepository $eventRepository): Response
+    {
+        // Set limit for events list
+        $eventsLimit = 3;
+
+        // Data recovery (Repository)
+        $eventsList = $eventRepository->findAllForHomepageByLimit($eventsLimit);
+
+        return $this->json(
+            // Data to serialize => Convert to JSON
+            $eventsList,
+            // Status code
+            200,
+            // Response headers to add (none)
+            [],
+            // The groups to be used by the Serializer
+            ['groups' => 'get_events_home']
+        );
+    }
+
+    /**
+     * Get events collection
+     * 
+     * @Route("", name="list", methods={"GET"})
+     * @return Response
+     */
     public function getEventsCollection(EventRepository $eventRepository): Response
     {
         // Data recovery (Repository)

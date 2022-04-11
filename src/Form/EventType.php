@@ -6,6 +6,7 @@ use App\Entity\Event;
 use App\Entity\Genre;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,6 +15,14 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+        ->add('active', ChoiceType::class, [
+            'choices' => [
+                'Oui' => 1,
+                'Non' => 0,
+            ],
+            'label'=> 'Actif'
+
+        ])
             ->add('name',null,[
                 'label'=> 'Nom'
             ])

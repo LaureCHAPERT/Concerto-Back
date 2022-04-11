@@ -16,6 +16,17 @@ use Symfony\Component\Routing\Annotation\Route;
 class EventController extends AbstractController
 {
     /**
+     * @Route("/home", name="back_event_homepage", methods={"GET"})
+     */
+    public function homeList(EventRepository $eventRepository, Request $request): Response
+    {
+        // Retrieving page events
+        $events = $eventRepository->findAllForHomepageByRegionOrderByCreation();
+
+        return $this->render('event/homepage.html.twig', compact('events'));
+    }    
+
+    /**
      * @Route("", name="back_event_index", methods={"GET"})
      */
     public function index(EventRepository $eventRepository, Request $request): Response
