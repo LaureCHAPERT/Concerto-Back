@@ -118,13 +118,6 @@ class EventController extends AbstractController
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }
 
-        $count = count([$event]);
-        $event = [
-
-            "event" => $event,
-            "count" => $count
-
-            ];
         return $this->json(
 
             // Data to serialize => Convert to JSON

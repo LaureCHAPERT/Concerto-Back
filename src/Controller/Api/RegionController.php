@@ -56,14 +56,6 @@ class RegionController extends AbstractController
             ];
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }
-
-        $count = count($region->getEvents());
-        $region = [
-
-            "region" => $region,
-            "count" => $count
-
-            ];
             
         return $this->json(
 
