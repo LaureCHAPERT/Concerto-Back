@@ -91,7 +91,7 @@ class EventRepository extends ServiceEntityRepository
     public function findAllForHomepageByRegionOrderByCreation()
     {
         $query = $this->createQueryBuilder('e') // e = Event
-        ->where('e.region = 48')
+        ->where('e.region = 177')
         ->orderBy('e.createdAt')
         ;
 
