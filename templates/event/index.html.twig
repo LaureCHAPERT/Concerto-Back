@@ -17,9 +17,10 @@
                     <th>Nom</th>
                     <th class="d-none d-md-table-cell">Description</th>
                     <th class="d-none d-xxl-table-cell">Date</th>
+                    <th class="d-none d-xxl-table-cell">Heure</th>
                     <th class="d-none d-md-table-cell">Prix</th>
-                    <th class="d-none d-xl-table-cell">Image</th>
                     <th class="d-none d-lg-table-cell">Billetterie</th>
+                    <th class="d-none d-lg-table-cell">Actif</th>
                     <th class="col-1 text-end">Actions</th>
                 </tr>
             </thead>
@@ -30,9 +31,10 @@
                     <td>{{ event.name }}</td>
                     <td class="wrap-text d-none d-md-table-cell">{{ event.description }}</td>
                     <td class="d-none d-xxl-table-cell">{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                    <td class="d-none d-md-table-cell">{{ event.hour|date('H:i')}}</td>
                     <td class="d-none d-md-table-cell">{{ event.price }}</td>
-                    <td class="d-none d-xl-table-cell">{{ event.image }}</td>
                     <td class="d-none d-lg-table-cell">{{ event.linkTicketing }}</td>
+                    <td class="d-none d-lg-table-cell">{{ event.active }}</td>
                     <td class="d-sm-flex">
                         <a  class="buttons btn btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
                         {{ include('event/_delete_form.html.twig') }}
