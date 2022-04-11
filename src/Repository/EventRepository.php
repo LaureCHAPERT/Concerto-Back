@@ -159,38 +159,5 @@ class EventRepository extends ServiceEntityRepository
         ;
     }
     */
-        
-    public function findHome()
-    {
-        // creation of a custom query
-        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
-        $qb = $this->createQueryBuilder('e')
-            ->select('e.id', 'e.name', 'e.image', 'e.description')
-            ->setMaxResults(3);
-        
-        // query retrieval
-        $query = $qb->getQuery();
-        
-        // query execute
-        return $query->execute();
-    }
-
-    public function findEvent(int $event_Id)
-    {
-        // creation of a custom query
-        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
-        $qb = $this->createQueryBuilder('event')        
-            ->delete('user', 'u')
-            ->join('e.genres', 'g')
-            ->join('e.region', 'r')
-            ->where('e.id = :eventId')
-            ->setParameter('eventId', $event_Id);
-        
-        // query retrieval
-        $query = $qb->getQuery();
-        
-        // query execute
-        return $query->execute();
-    }
 }
 
