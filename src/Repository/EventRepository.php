@@ -51,7 +51,7 @@ class EventRepository extends ServiceEntityRepository
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = 
-            'SELECT `event`.`name`, `event`.`image`, `event`.`price`, `event`.`link_ticketing`, `genre`.`name` as `genre_name`, `region`.`name` as `region_name`
+            'SELECT `event`.`name`, `event`.`image`, `event`.`price`, `event`.`description`, `event`.`link_ticketing`, `genre`.`name` as `genre_name`, `region`.`name` as `region_name`
             FROM `event`
             INNER JOIN `event_genre` ON `event`.`id` = `event_id` 
             INNER JOIN `genre` ON `event_genre`.`genre_id` = `genre`.`id`
