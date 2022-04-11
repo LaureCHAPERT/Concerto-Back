@@ -49,6 +49,7 @@ class Genre
      */
     private $events;
 
+
     public function __construct()
     {
         $this->events = new ArrayCollection();
