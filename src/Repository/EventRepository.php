@@ -68,7 +68,7 @@ class EventRepository extends ServiceEntityRepository
     }
 
     /**
-     * Return all events where region = Ile-de-France / order by creation date / limit them by 3
+     * Return all events for API where region = Ile-de-France / order by creation date / limit them by 3
      *
      * @return void
      */
@@ -76,7 +76,7 @@ class EventRepository extends ServiceEntityRepository
     {
         $query = $this->createQueryBuilder('e') // e = Event
         ->where('e.region = 177')
-        ->orderBy('e.createdAt')
+        ->orderBy('e.date', 'DESC')
         ->setMaxResults($eventsLimit)
         ;
 
@@ -88,11 +88,11 @@ class EventRepository extends ServiceEntityRepository
      *
      * @return void
      */
-    public function findAllForHomepageByRegionOrderByCreation()
+    public function findAllForHomepageByRegionOrderByDate()
     {
         $query = $this->createQueryBuilder('e') // e = Event
         ->where('e.region = 177')
-        ->orderBy('e.createdAt')
+        ->orderBy('e.date', 'DESC')
         ;
 
         return $query->getQuery()->getResult();
@@ -106,7 +106,7 @@ class EventRepository extends ServiceEntityRepository
     public function getPaginatedEvents($page, $limit)
     {
         $query = $this->createQueryBuilder('e') // e = Event
-            ->orderBy('e.createdAt')
+            ->orderBy('e.date', 'DESC')
             // Defines the number of the first element to be retrieved
             ->setFirstResult(($page * $limit) - $limit)
             // Defines the maximum number of events per page

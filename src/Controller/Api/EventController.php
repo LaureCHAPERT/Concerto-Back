@@ -17,7 +17,7 @@ class EventController extends AbstractController
     /**
      * Get events collection
      * 
-     * @Route("", name="list", methods={"GET"})
+     * @Route("/home", name="home", methods={"GET"})
      * @return Response
      */
     public function getEventsCollectionForHomepage(EventRepository $eventRepository): Response
@@ -64,7 +64,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * Get one item
+     * Get one Event
      * 
      * @Route("/{id}", name="item", methods={"GET"}, requirements={"id": "\d+"})
      * @return Response
@@ -97,7 +97,7 @@ class EventController extends AbstractController
     }
 
     /**
-     * Get  items
+     * Get items by criteria
      * 
      * @Route("/region/{region_id}/genre/{genre_id}", name="search", methods={"GET"})
      * @return Response
@@ -109,39 +109,6 @@ class EventController extends AbstractController
         $event = $eventRepository->findEventsByCriteria($region_id, $genre_id);
 
         if (empty($event))
-        {
-            $data = 
-            [
-                'error' => true,
-                'message' => 'Non trouvé',
-            ];
-            return $this->json($data, Response::HTTP_NOT_FOUND);
-        }
-
-        return $this->json(
-
-            // Data to serialize => Convert to JSON
-            $event, 
-            // Status code
-            200,
-            // Response headers to add (none)
-            [],
-            // The groups to be used by the Serializer
-            ['groups' => "get_events_item"]);
-    }
-
-    /**
-     * Get  items
-     * 
-     * @Route("/home", name="home", methods={"GET"})
-     * @return Response
-     */
-    public function getItemsHome(EventRepository $eventRepository): Response
-    {
-        // Data recovery (Repository)
-
-        $event = $eventRepository->findAllForHomepageByRegionOrderByCreation();
-        if (is_null($event))
         {
             $data = 
             [

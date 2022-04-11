@@ -21,7 +21,7 @@ class EventController extends AbstractController
     public function homeList(EventRepository $eventRepository, Request $request): Response
     {
         // Retrieving page events
-        $events = $eventRepository->findAllForHomepageByRegionOrderByCreation();
+        $events = $eventRepository->findAllForHomepageByRegionOrderByDate();
 
         return $this->render('event/homepage.html.twig', compact('events'));
     }    
