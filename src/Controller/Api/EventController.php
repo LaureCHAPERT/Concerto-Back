@@ -76,10 +76,9 @@ class EventController extends AbstractController
      * @Route("/region/{region_id}/genre/{genre_id}", name="search", methods={"GET"})
      * @return Response
      */
-    public function getItemsByCriteria(int $region_id, int $genre_id, EventRepository $eventRepository): Response
+    public function getItemsByCriteria(int $region_id, int $genre_id, EventRepository $eventRepository, GenreRepository $genreRepository): Response
     {
         // Data recovery (Repository)
-
         $event = $eventRepository->findEventsByCriteria($region_id, $genre_id);
         if (empty($event))
         {
@@ -100,7 +99,7 @@ class EventController extends AbstractController
             // Response headers to add (none)
             [],
             // The groups to be used by the Serializer
-            ['groups' => "get_events_item"]);
+            ['groups' => "get_search_item"]);
     }
 
     /**
