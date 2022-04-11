@@ -129,37 +129,4 @@ class EventController extends AbstractController
             // The groups to be used by the Serializer
             ['groups' => "get_events_item"]);
     }
-
-    /**
-     * Get  items
-     * 
-     * @Route("/home", name="home", methods={"GET"})
-     * @return Response
-     */
-    public function getItemsHome(EventRepository $eventRepository): Response
-    {
-        // Data recovery (Repository)
-
-        $event = $eventRepository->findAllForHomepageByRegionOrderByCreation();
-        if (is_null($event))
-        {
-            $data = 
-            [
-                'error' => true,
-                'message' => 'Non trouvé',
-            ];
-            return $this->json($data, Response::HTTP_NOT_FOUND);
-        }
-
-        return $this->json(
-
-            // Data to serialize => Convert to JSON
-            $event, 
-            // Status code
-            200,
-            // Response headers to add (none)
-            [],
-            // The groups to be used by the Serializer
-            ['groups' => "get_events_item"]);
-    }
 }

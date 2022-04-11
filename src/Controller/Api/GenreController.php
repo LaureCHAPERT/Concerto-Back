@@ -2,52 +2,79 @@
 
 namespace App\Controller\Api;
 
-use App\Entity\Genre;
+use App\Entity\Event;
+use App\Repository\EventRepository;
 use App\Repository\GenreRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("api/genre", name="api_genres_")
+ * @Route("api/event", name="api_events_")
  */
-class GenreController extends AbstractController
+class EventController extends AbstractController
 {
     /**
-     * Get genres collection
+     * Get events collection
      * 
-     * @Route("", name="list", methods={"GET"})
+     * @Route("/home", name="home", methods={"GET"})
      * @return Response
      */
-    public function getGenresCollection(GenreRepository $genreRepository): Response
+    public function getEventsCollectionForHomepage(EventRepository $eventRepository): Response
     {
+        // Set limit for events list
+        $eventsLimit = 3;
+
         // Data recovery (Repository)
-        $genresList = $genreRepository->findAllGenres();
+        $eventsList = $eventRepository->findAllForHomepageByLimit($eventsLimit);
 
         return $this->json(
             // Data to serialize => Convert to JSON
-            $genresList,
+            $eventsList,
             // Status code
             200,
             // Response headers to add (none)
             [],
             // The groups to be used by the Serializer
-            ['groups' => 'get_genres_list']
+            ['groups' => 'get_events_home']
         );
     }
 
     /**
-     * Get one item
+     * Get events collection
      * 
-     * @Route("/{id}/events", name="item", methods={"GET"}, requirements={"id": "\d+"})
+     * @Route("", name="list", methods={"GET"})
      * @return Response
      */
-    public function getItem(int $id, GenreRepository $genreRepository): Response
+    public function getEventsCollection(EventRepository $eventRepository): Response
     {
         // Data recovery (Repository)
-        $genre = $genreRepository->find($id);
+        $eventsList = $eventRepository->findAll();
 
-        if (is_null($genre))
+        return $this->json(
+            // Data to serialize => Convert to JSON
+            $eventsList,
+            // Status code
+            200,
+            // Response headers to add (none)
+            [],
+            // The groups to be used by the Serializer
+            ['groups' => 'get_events_list']
+        );
+    }
+
+    /**
+     * Get one Event
+     * 
+     * @Route("/{id}", name="item", methods={"GET"}, requirements={"id": "\d+"})
+     * @return Response
+     */
+    public function getItem(int $id, EventRepository $eventRepository): Response
+    {
+        // Data recovery (Repository)
+        $event = $eventRepository->find($id);
+
+        if (is_null($event))
         {
             $data = 
             [
@@ -56,16 +83,50 @@ class GenreController extends AbstractController
             ];
             return $this->json($data, Response::HTTP_NOT_FOUND);
         }
-            
+
         return $this->json(
 
             // Data to serialize => Convert to JSON
-            $genre, 
+            $event, 
             // Status code
             200,
             // Response headers to add (none)
             [],
             // The groups to be used by the Serializer
-            ['groups' => "get_genres_item"]);
+            ['groups' => "get_search_item"]);
+    }
+
+    /**
+     * Get items by criteria
+     * 
+     * @Route("/region/{region_id}/genre/{genre_id}", name="search", methods={"GET"})
+     * @return Response
+     */
+    public function getItemsByCriteria(int $region_id, int $genre_id, EventRepository $eventRepository): Response
+    {
+        // Data recovery (Repository)
+
+        $event = $eventRepository->findEventsByCriteria($region_id, $genre_id);
+
+        if (empty($event))
+        {
+            $data = 
+            [
+                'error' => true,
+                'message' => 'Non trouvé',
+            ];
+            return $this->json($data, Response::HTTP_NOT_FOUND);
+        }
+
+        return $this->json(
+
+            // Data to serialize => Convert to JSON
+            $event, 
+            // Status code
+            200,
+            // Response headers to add (none)
+            [],
+            // The groups to be used by the Serializer
+            ['groups' => "get_search_item"]);
     }
 }
