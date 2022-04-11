@@ -35,7 +35,6 @@ class EventType extends AbstractType
             ->add('linkTicketing',null,[
                 'label'=> 'Lien vers la billeterie'
             ])
-            ->add('slug')
             ->add('genres', EntityType::class, [
                 'class'=> Genre::class,
                 'multiple' => true,
