@@ -68,6 +68,21 @@ class EventRepository extends ServiceEntityRepository
     }
 
     /**
+     * Return all events where region = Ile-de-France and limit them by 3
+     *
+     * @return void
+     */
+    public function findAllForHomepage()
+    {
+        $query = $this->createQueryBuilder('e') // e = Event
+        ->where('e.region = 48')
+        ->orderBy('e.createdAt')
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
      * Return all events per page
      * 
      * @return void 
