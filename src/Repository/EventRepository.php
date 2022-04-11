@@ -68,11 +68,27 @@ class EventRepository extends ServiceEntityRepository
     }
 
     /**
-     * Return all events where region = Ile-de-France and limit them by 3
+     * Return all events where region = Ile-de-France / order by creation date / limit them by 3
      *
      * @return void
      */
-    public function findAllForHomepage()
+    public function findAllForHomepageByLimit($eventsLimit)
+    {
+        $query = $this->createQueryBuilder('e') // e = Event
+        ->where('e.region = 48')
+        ->orderBy('e.createdAt')
+        ->setMaxResults($eventsLimit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Return all events where region = Ile-de-France / order by creation date
+     *
+     * @return void
+     */
+    public function findAllForHomepageByRegionOrderByCreation()
     {
         $query = $this->createQueryBuilder('e') // e = Event
         ->where('e.region = 48')

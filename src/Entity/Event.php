@@ -17,49 +17,49 @@ class Event
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
-     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item", "get_events_home"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_regions_item", "get_events_home"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
      */
     private $date;
 
     /**
      * @ORM\Column(type="decimal", precision=5, scale=2)
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
      */
     private $price;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
      */
     private $linkTicketing;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Groups({"get_events_list", "get_events_item"})
+     * @Groups({"get_events_list", "get_events_item", "get_events_home"})
      */
     private $slug;
 
