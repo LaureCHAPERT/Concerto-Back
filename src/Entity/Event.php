@@ -92,6 +92,11 @@ class Event
      */
     private $user;
 
+    /**
+     * @ORM\Column(type="smallint")
+     */
+    private $active;
+
     public function __construct()
     {
         $this->genres = new ArrayCollection();
@@ -260,6 +265,18 @@ class Event
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(int $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }
