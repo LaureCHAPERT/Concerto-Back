@@ -67,7 +67,7 @@ class GenreRepository extends ServiceEntityRepository
     public function getPaginatedGenres($page, $limit)
     {
         $query = $this->createQueryBuilder('g') // g = Genre
-            ->orderBy('g.createdAt')
+            ->orderBy('g.name')
             // Defines the number of the first element to be retrieved
             ->setFirstResult(($page * $limit) - $limit)
             // Defines the maximum number of genres per page

@@ -63,7 +63,7 @@ class EventRepository extends ServiceEntityRepository
     }
 
     /**
-     * Return all events for API where region = Ile-de-France / order by creation date / limit them by 3
+     * API - Return all events where region = Ile-de-France / order by creation date / limit them by 3
      *
      * @return void
      */
@@ -145,7 +145,6 @@ class EventRepository extends ServiceEntityRepository
         // For result, only return base type, not arrays, not objects
         return $query->getQuery()->getSingleScalarResult();
     }
-
 
     /**
      * Returns number of events by Users

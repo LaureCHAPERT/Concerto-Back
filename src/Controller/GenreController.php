@@ -52,10 +52,7 @@ class GenreController extends AbstractController
             return $this->redirectToRoute('back_genre_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('genre/create.html.twig', [
-            'genre' => $genre,
-            'form' => $form,
-        ]);
+        return $this->renderForm('genre/create.html.twig', compact('genre', 'form'));
     }
 
     /**
@@ -71,10 +68,7 @@ class GenreController extends AbstractController
             return $this->redirectToRoute('back_genre_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('genre/update.html.twig', [
-            'genre' => $genre,
-            'form' => $form,
-        ]);
+        return $this->renderForm('genre/update.html.twig', compact('genre', 'form'));
     }
 
     /**

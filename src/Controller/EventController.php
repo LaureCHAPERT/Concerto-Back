@@ -21,7 +21,7 @@ class EventController extends AbstractController
      */
     public function homeList(EventRepository $eventRepository, Request $request): Response
     {
-        // Retrieving page events
+        // Retrieving homepage events per region & ordoned by date
         $events = $eventRepository->findAllForHomepageByRegionOrderByDate();
 
         return $this->render('event/homepage.html.twig', compact('events'));
@@ -41,19 +41,18 @@ class EventController extends AbstractController
         // Retrieve page number
         $page = (int)$request->query->get("page", 1); 
 
-        
-        
-
         /**
+         * Retrieving user in session
          * @var \App\Entity\User $user
          */
         $user = $this->getUser();
 
+        // 
         if(in_array('ROLE_MANAGER',$user->getRoles()))
         {
-            // Retrieving the total number of events
+            // Retrieving the total number of events for a user
             $total = $eventRepository->getTotalEventsByUser($user->getId());
-            // Retrieving page events
+            // Retrieving page events for a user
             $events = $eventRepository->getPaginatedEvents($page, $limit, $user->getId());
         }
         else{
@@ -80,10 +79,7 @@ class EventController extends AbstractController
             return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('event/create.html.twig', [
-            'event' => $event,
-            'form' => $form,
-        ]);
+        return $this->renderForm('event/create.html.twig', compact('event', 'form'));
     }
 
     /**
@@ -99,10 +95,7 @@ class EventController extends AbstractController
             return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('event/update.html.twig', [
-            'event' => $event,
-            'form' => $form,
-        ]);
+        return $this->renderForm('event/update.html.twig', compact('event', 'form'));
     }
 
     /**
