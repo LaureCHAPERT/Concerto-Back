@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Event;
+use App\Entity\User;
 use App\Form\EventType;
 use App\Repository\EventRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -40,11 +41,27 @@ class EventController extends AbstractController
         // Retrieve page number
         $page = (int)$request->query->get("page", 1); 
 
-        // Retrieving page events
-        $events = $eventRepository->getPaginatedEvents($page, $limit);
+        
+        
 
-        // Retrieving the total number of events
-        $total = $eventRepository->getTotalEvents();
+        /**
+         * @var \App\Entity\User $user
+         */
+        $user = $this->getUser();
+
+        if(in_array('ROLE_MANAGER',$user->getRoles()))
+        {
+            // Retrieving the total number of events
+            $total = $eventRepository->getTotalEventsByUser($user->getId());
+            // Retrieving page events
+            $events = $eventRepository->getPaginatedEvents($page, $limit, $user->getId());
+        }
+        else{
+            // Retrieving the total number of events
+            $total = $eventRepository->getTotalEvents();
+            // Retrieving page events
+            $events = $eventRepository->getPaginatedEventsAdmin($page, $limit);
+        }
 
         return $this->render('event/index.html.twig', compact('events', 'total', 'limit', 'page'));
     }

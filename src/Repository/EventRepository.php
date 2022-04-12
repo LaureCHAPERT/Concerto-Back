@@ -98,7 +98,27 @@ class EventRepository extends ServiceEntityRepository
      * 
      * @return void 
      */
-    public function getPaginatedEvents($page, $limit)
+    public function getPaginatedEvents($page, $limit, $user_id)
+    {
+        $query = $this->createQueryBuilder('e') // e = Event
+            ->orderBy('e.date', 'DESC')
+            ->where('e.user = :user_id')
+            ->setParameter('user_id', $user_id)
+            // Defines the number of the first element to be retrieved
+            ->setFirstResult(($page * $limit) - $limit)
+            // Defines the maximum number of events per page
+            ->setMaxResults($limit)
+        ;
+
+        return $query->getQuery()->getResult();
+    }
+
+    /**
+     * Return all events per page
+     * 
+     * @return void 
+     */
+    public function getPaginatedEventsAdmin($page, $limit)
     {
         $query = $this->createQueryBuilder('e') // e = Event
             ->orderBy('e.date', 'DESC')
@@ -120,6 +140,24 @@ class EventRepository extends ServiceEntityRepository
     {
         $query = $this->createQueryBuilder('e') // e = Event
             ->select('COUNT(e)')
+        ;
+
+        // For result, only return base type, not arrays, not objects
+        return $query->getQuery()->getSingleScalarResult();
+    }
+
+
+    /**
+     * Returns number of events by Users
+     *
+     * @return void
+     */
+    public function getTotalEventsByUser($user_id)
+    {
+        $query = $this->createQueryBuilder('e') // e = Event
+            ->select('COUNT(e)')
+            ->where('e.user = :user_id')
+            ->setParameter('user_id', $user_id)
         ;
 
         // For result, only return base type, not arrays, not objects
