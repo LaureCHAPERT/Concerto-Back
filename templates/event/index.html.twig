@@ -24,8 +24,10 @@
                     <th class="col-1 text-end">Actions</th>
                 </tr>
             </thead>
+            {{ app.user.username}}
             <tbody>
             {% for event in events %}
+<<<<<<< HEAD
                 <tr>
                     <td>{{ event.id }}</td>
                     <td>{{ event.name }}</td>
@@ -40,6 +42,23 @@
                         {{ include('event/_delete_form.html.twig') }}
                     </td>
                 </tr>
+=======
+                {% if app.user.username == event.user %}
+                    <tr>
+                        <td>{{ event.id }}</td>
+                        <td>{{ event.name }}</td>
+                        <td class="wrap-text d-none d-md-table-cell">{{ event.description }}</td>
+                        <td class="d-none d-xxl-table-cell">{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                        <td class="d-none d-md-table-cell">{{ event.price }}</td>
+                        <td class="d-none d-xl-table-cell">{{ event.image }}</td>
+                        <td class="d-none d-lg-table-cell">{{ event.linkTicketing }}</td>
+                        <td class="d-sm-flex">
+                            <a  class="buttons btn btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
+                            {{ include('event/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% endif %}
+>>>>>>> User-Authentification-Role
             {% endfor %}
             </tbody>
         </table>

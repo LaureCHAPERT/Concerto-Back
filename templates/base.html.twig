@@ -29,9 +29,13 @@
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_event_homepage') }}">Accueil</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_event_index') }}">Evénements</a></li>
+                            {% if is_granted('ROLE_MODERATOR') %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_genre_index') }}">Genres</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_region_index') }}">Régions</a></li>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('back_user_index') }}">Utilisateurs</a></li>
+                            {% endif %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
                             {% else %}
                             <li class="nav-item"><a class="nav-link" href="{{ path('app_login')}}">Connexion</a></li>  
