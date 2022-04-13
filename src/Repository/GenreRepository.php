@@ -50,8 +50,9 @@ class GenreRepository extends ServiceEntityRepository
         // creation of a custom query
         // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
         $qb = $this->createQueryBuilder('g')
-        ->select('g.id', 'g.name', 'g.image');
-        
+            ->select('g.id', 'g.name', 'g.image')
+            ->orderBy('g.name', 'ASC')
+        ;
         // query retrieval
         $query = $qb->getQuery();
         

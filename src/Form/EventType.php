@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Event;
 use App\Entity\Genre;
+use Doctrine\ORM\EntityRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -40,6 +41,10 @@ class EventType extends AbstractType
             ])
             ->add('genres', EntityType::class, [
                 'class'=> Genre::class,
+                'query_builder' => function (EntityRepository $er) {
+                    return $er->createQueryBuilder('g')
+                        ->orderBy('g.name', 'ASC');
+                },
                 'multiple' => true,
                 'expanded' => true,
             ])

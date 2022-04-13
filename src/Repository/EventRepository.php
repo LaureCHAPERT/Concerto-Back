@@ -87,7 +87,7 @@ class EventRepository extends ServiceEntityRepository
     {
         $query = $this->createQueryBuilder('e') // e = Event
         ->where('e.region = 177')
-        ->orderBy('e.date', 'DESC')
+        ->orderBy('e.date', 'ASC')
         ;
 
         return $query->getQuery()->getResult();
@@ -101,7 +101,7 @@ class EventRepository extends ServiceEntityRepository
     public function getPaginatedEvents($page, $limit, $user_id)
     {
         $query = $this->createQueryBuilder('e') // e = Event
-            ->orderBy('e.date', 'DESC')
+            ->orderBy('e.date', 'ASC')
             ->where('e.user = :user_id')
             ->setParameter('user_id', $user_id)
             // Defines the number of the first element to be retrieved
@@ -121,7 +121,7 @@ class EventRepository extends ServiceEntityRepository
     public function getPaginatedEventsAdmin($page, $limit)
     {
         $query = $this->createQueryBuilder('e') // e = Event
-            ->orderBy('e.date', 'DESC')
+            ->orderBy('e.date', 'ASC')
             // Defines the number of the first element to be retrieved
             ->setFirstResult(($page * $limit) - $limit)
             // Defines the maximum number of events per page
