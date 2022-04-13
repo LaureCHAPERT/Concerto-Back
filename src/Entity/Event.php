@@ -70,7 +70,7 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
-     * @Groups({"get_events_list", "get_events_item", "get_search_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_events_item", "get_search_item", "get_events_home", "get_regions_item"})
      */
     private $slug;
 
