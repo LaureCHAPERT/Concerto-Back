@@ -8,6 +8,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -26,11 +27,14 @@ class EventType extends AbstractType
                 'format' => 'yyyy-MM-dd', 
                 'widget' => 'single_text',                
             ])
+            ->add('hour', null, [
+                'label' =>'Heure'
+            ])
             ->add('price',null,[
                 'label'=> 'Prix'
             ])
-            ->add('image')
-            ->add('linkTicketing',null,[
+            ->add('image', UrlType::class)
+            ->add('linkTicketing',UrlType::class,[
                 'label'=> 'Lien vers la billeterie'
             ])
             ->add('genres', EntityType::class, [

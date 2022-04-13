@@ -26,36 +26,45 @@ class Event
     /**
      * @ORM\Column(type="string", length=50)
      * @Groups({"get_events_list", "get_events_item", "get_search_item", "get_genres_item", "get_events_home", "get_regions_item"})
+     * @Assert\NotBlank
+     * @Assert\Length(max=50)
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
      * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
+     * @Assert\NotBlank
+     * @Assert\Length(max=255)
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
      * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_search_item", "get_regions_item", "get_events_home"})
+     * @Assert\NotBlank
+     * @Assert\Range(min="today", minMessage = "Il faut rentrer une date future !")
      */
     private $date;
 
     /**
      * @ORM\Column(type="decimal", precision=5, scale=2)
      * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
+     * @Assert\NotBlank
      */
     private $price;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
+     * @Assert\NotBlank
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
+     * @Assert\NotBlank
      */
     private $linkTicketing;
 
@@ -78,6 +87,7 @@ class Event
     /**
      * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="events")
      * @Groups({"get_events_list", "get_events_item", "get_search_item"})
+     * @Assert\NotBlank
      */
     private $genres;
 
@@ -85,6 +95,7 @@ class Event
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"get_events_list", "get_events_item", "get_search_item"})
+     * @Assert\NotBlank
      */
     private $region;
 

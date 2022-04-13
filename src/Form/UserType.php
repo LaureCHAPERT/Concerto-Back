@@ -7,6 +7,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class UserType extends AbstractType
 {
@@ -16,7 +18,16 @@ class UserType extends AbstractType
             ->add('username')
             ->add('image')
             ->add('email')
-            ->add('password')
+            ->add('password', null, [
+                'empty_data' => '',
+                'constraints' => [
+                    new NotBlank(),
+                    new Regex(
+                        "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/",
+                        "Le mot de passe doit contenir au minimum 8 caractères, une majuscule, un chiffre et un caractère spécial"
+                    ),
+                ],
+            ])
             ->add('roles', ChoiceType::class, [
                 'label' => 'Rôle',
                 'choices'=> [
