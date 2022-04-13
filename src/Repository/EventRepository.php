@@ -70,7 +70,8 @@ class EventRepository extends ServiceEntityRepository
     public function findAllForHomepageByLimit($eventsLimit)
     {
         $query = $this->createQueryBuilder('e') // e = Event
-        ->where('e.region = 177')
+        ->join('e.region' ,'r')
+        ->where('r.name = \'Ile-De-France\'')
         ->orderBy('e.date', 'DESC')
         ->setMaxResults($eventsLimit)
         ;
@@ -86,7 +87,8 @@ class EventRepository extends ServiceEntityRepository
     public function findAllForHomepageByRegionOrderByDate()
     {
         $query = $this->createQueryBuilder('e') // e = Event
-        ->where('e.region = 177')
+        ->join('e.region' ,'r')
+        ->where('r.name = \'Ile-De-France\'')
         ->orderBy('e.date', 'ASC')
         ;
 
