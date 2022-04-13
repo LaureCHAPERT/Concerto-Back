@@ -36,6 +36,9 @@ class RegionController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $regionRepository->add($region);
+
+            $this->addFlash('Succés', 'Région ajoutée.');
+
             return $this->redirectToRoute('back_region_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -52,6 +55,9 @@ class RegionController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $regionRepository->add($region);
+
+            $this->addFlash('Succés', 'Région mise à jour.');
+
             return $this->redirectToRoute('back_region_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -66,6 +72,8 @@ class RegionController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$region->getId(), $request->request->get('_token'))) {
             $regionRepository->remove($region);
         }
+
+        $this->addFlash('Succés', 'Région supprimée.');
 
         return $this->redirectToRoute('back_region_index', [], Response::HTTP_SEE_OTHER);
     }

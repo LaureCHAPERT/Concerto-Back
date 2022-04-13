@@ -7,6 +7,7 @@
         <nav class="nav navbar">
             <div class="col-sm-6">
                 <h1>Liste des événements</h1>
+                {{ include('_flash_messages.html.twig') }}
             </div>   
             <a class="btn btn-success" href="{{ path('back_event_create') }}">Ajouter</a>
         </nav>

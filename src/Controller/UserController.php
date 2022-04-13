@@ -39,6 +39,9 @@ class UserController extends AbstractController
             $hashedPassword = $userPasswordHasherInterface->hashPassword($user, $user->getPassword());
             $user->setPassword($hashedPassword);
             $userRepository->add($user);
+
+            $this->addFlash('Succés', 'Utilisateur ajouté.');
+
             return $this->redirectToRoute('back_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -58,6 +61,9 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->add($user);
+
+            $this->addFlash('Succés', 'Utilisateur mis à jour.');
+
             return $this->redirectToRoute('back_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -75,6 +81,8 @@ class UserController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $userRepository->remove($user);
         }
+
+        $this->addFlash('Succés', 'Utilisateur supprimé.');
 
         return $this->redirectToRoute('back_user_index', [], Response::HTTP_SEE_OTHER);
     }
