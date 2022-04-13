@@ -75,6 +75,13 @@ class EventController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /**
+             * Retrieving user in session
+             * @var \App\Entity\User $user
+             */
+            $user = $this->getUser();
+            $event->setUser($user);
             $eventRepository->add($event);
             return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }

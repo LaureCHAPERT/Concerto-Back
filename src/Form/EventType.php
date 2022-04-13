@@ -16,14 +16,6 @@ class EventType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-        ->add('active', ChoiceType::class, [
-            'choices' => [
-                'Oui' => 1,
-                'Non' => 0,
-            ],
-            'label'=> 'Actif'
-
-        ])
             ->add('name',null,[
                 'label'=> 'Nom'
             ])
@@ -47,7 +39,6 @@ class EventType extends AbstractType
                 'expanded' => true,
             ])
             ->add('region')
-            ->add('user')
         ;
     }
 
