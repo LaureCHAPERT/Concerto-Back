@@ -135,7 +135,6 @@ class AppFixtures extends Fixture
             $randomIndex3 = array_rand($userObjects);
             $event->setUser($userObjects[$randomIndex3]);
             $event->setCreatedAt(new DateTimeImmutable());
-            $event->setActive(1);
             $manager->persist($event);
         }
         
