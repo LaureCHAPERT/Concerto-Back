@@ -26,22 +26,28 @@
                     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
                     <div id="navbarResponsive" class="collapse navbar-collapse">
                         <ul class="navbar-nav">
+                            <!-- access only for managers -->
                             {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                            <li class="nav-item"><a class="nav-link" href="{{ path('back_event_homepage') }}">Accueil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ path('back_event_index') }}">Evénements</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ path('back_event_index') }}">Evénements</a></li>
+                            <!-- access only for moderators -->
                             {% if is_granted('ROLE_MODERATOR') %}
-                            <li class="nav-item"><a class="nav-link" href="{{ path('back_genre_index') }}">Genres</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ path('back_region_index') }}">Régions</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ path('back_event_homepage') }}">Accueil</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ path('back_genre_index') }}">Genres</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ path('back_region_index') }}">Régions</a></li>
                             {% endif %}
+                            <!-- access only for admins -->
                             {% if is_granted('ROLE_ADMIN') %}
-                            <li class="nav-item"><a class="nav-link" href="{{ path('back_user_index') }}">Utilisateurs</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ path('back_user_index') }}">Utilisateurs</a></li>
                             {% endif %}
-                            <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
                             {% else %}
-                            <li class="nav-item"><a class="nav-link" href="{{ path('app_login')}}">Connexion</a></li>  
-                        {% endif %}
+                                <li class="nav-item"><a class="nav-link" href="{{ path('app_login')}}">Connexion</a></li>  
+                            {% endif %}
                         </ul>
                     </div>
+                    {% if app.user %}
+                        <li class="user-connect">Utilisateur : {{ app.user.username }} {{ app.user.bestRole }}</li>
+                    {% endif %}
                 </div>
             </nav>
         </header>

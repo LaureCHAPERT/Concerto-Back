@@ -25,7 +25,6 @@
                     <th class="col-1 text-end">Actions</th>
                 </tr>
             </thead>
-            {{ app.user.username}}
             <tbody>
             {% for event in events %}
                 {% if app.user.username == event.user or is_granted('ROLE_MODERATOR') or is_granted('ROLE_ADMIN') %}

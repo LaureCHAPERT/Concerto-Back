@@ -97,6 +97,12 @@ class EventController extends AbstractController
      */
     public function edit(Request $request, Event $event, EventRepository $eventRepository): Response
     {
+        /**
+         * Retrieving user in session
+         * @var \App\Entity\User $user
+         */
+        $user = $this->getUser();
+
         $form = $this->createForm(EventType::class, $event);
         $form->handleRequest($request);
 
@@ -107,8 +113,14 @@ class EventController extends AbstractController
 
             return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
+        if (($user->getUsername() == $event->getUser()) || in_array('ROLE_MODERATOR',$user->getRoles()) || in_array('ROLE_ADMIN',$user->getRoles())) {
+            return $this->renderForm('event/update.html.twig', compact('event', 'form'));
 
-        return $this->renderForm('event/update.html.twig', compact('event', 'form'));
+        } else {
+            $this->addFlash('Accés refusé', "Accés refusé. Vous avez été redirigé sur la liste de vos événements");
+            
+            return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
+        }
     }
 
     /**
