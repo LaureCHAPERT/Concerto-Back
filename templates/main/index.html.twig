@@ -6,7 +6,9 @@
 
 <div>
     <h1>Bienvenue dans le Back-Office de Concert'O</h1>
-    <h3>Vous êtes connecté en tant que  {{ app.user.bestRole }} ({{ app.user.username }})</h3>
+    {% if app.user %}
+        <h3>Vous êtes connecté en tant que  {{ app.user.bestRole }} ({{ app.user.username }})</h3>
+    {% endif %}
 
 </div>
 {% endblock %}
