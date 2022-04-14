@@ -42,10 +42,10 @@ security:
         - { path: ^/back/event, roles: ROLE_MANAGER }
         - { path: ^/back/event/create, roles: ROLE_MANAGER }
         - { path: ^/back/event/(.*), roles: ROLE_MANAGER }
-        - { path: ^/back/genre|region/, role: ROLE_MODERATOR }
+        - { path: ^/back/(genre|region)/, role: ROLE_MODERATOR }
         - { path: ^/back/event/home, role: ROLE_MODERATOR }
         - { path: ^/back/user, roles: ROLE_ADMIN }
-        - { path: ^back/login, roles: PUBLIC_ACCESS }
+        - { path: ^/back/login, roles: PUBLIC_ACCESS }
 
     role_hierarchy:
         # Role Moderator inherits the Manager role
