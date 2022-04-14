@@ -22,7 +22,6 @@
                     <th class="d-none d-md-table-cell">Prix</th>
                     <th class="d-none d-lg-table-cell">Billetterie</th>
                     <th class="d-none d-lg-table-cell">Utilisateur</th>
-                    <th class="d-none d-lg-table-cell">Actif</th>
                     <th class="col-1 text-end">Actions</th>
                 </tr>
             </thead>
@@ -39,7 +38,6 @@
                         <td class="d-none d-md-table-cell">{{ event.price }}</td>
                         <td class="d-none d-xl-table-cell">{{ event.linkTicketing }}</td>
                         <td class="d-none d-lg-table-cell">{{ event.user }}</td>
-                    <td class="d-none d-lg-table-cell">{{ event.active }}</td>
                         <td class="d-sm-flex">
                             <a  class="buttons btn btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
                             {{ include('event/_delete_form.html.twig') }}
