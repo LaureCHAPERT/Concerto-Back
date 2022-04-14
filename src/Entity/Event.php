@@ -63,7 +63,7 @@ class Event
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
+     * @Groups({"get_events_list", "get_search_item", "get_events_item", "get_regions_item", "get_genres_item", "get_events_home"})
      * @Assert\NotBlank
      */
     private $linkTicketing;
