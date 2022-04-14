@@ -115,8 +115,9 @@ class EventController extends AbstractController
         }
         if (($user->getUsername() == $event->getUser()) || in_array('ROLE_MODERATOR',$user->getRoles()) || in_array('ROLE_ADMIN',$user->getRoles())) {
             return $this->renderForm('event/update.html.twig', compact('event', 'form'));
+
         } else {
-            $this->addFlash('Accés refusé', "Vous n'avez pas les droits pour accéder à cet événement.");
+            $this->addFlash('Accés refusé', "Accés refusé. Vous avez été redirigé sur la liste de vos événements");
             
             return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
