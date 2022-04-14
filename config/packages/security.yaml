@@ -39,10 +39,12 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
 
-        - { path: ^/back/(event), roles: ROLE_MANAGER }
-        - { path: ^/back/(event)/(.*), roles: ROLE_MANAGER }
-        - { path: ^/back/(genre|region)/, role: ROLE_MODERATOR }
-        - { path: ^/back/(user), roles: ROLE_ADMIN }
+        - { path: ^/back/event, roles: ROLE_MANAGER }
+        - { path: ^/back/event/create, roles: ROLE_MANAGER }
+        - { path: ^/back/event/(.*), roles: ROLE_MANAGER }
+        - { path: ^/back/genre|region/, role: ROLE_MODERATOR }
+        - { path: ^/back/event/home, role: ROLE_MODERATOR }
+        - { path: ^/back/user, roles: ROLE_ADMIN }
         - { path: ^back/login, roles: PUBLIC_ACCESS }
 
     role_hierarchy:
