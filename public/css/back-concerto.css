@@ -1,4 +1,26 @@
-h1 {
+h1, h3 {
     text-align: center;
+    margin-top: 0.5em;
 }
 
+.wrap-text{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 15ch;
+}
+
+.buttons {
+    margin-right: 1em;
+    margin-bottom: auto;
+}
+
+body {
+    background-color: rgba(161, 151, 137, 0.397);
+}
+
+.user-connect {
+    text-decoration: none;
+    color: rgba(182, 170, 170, 0.856);
+    list-style-type: none;
+}

@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\RegionRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,16 +17,19 @@ class Region
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_regions_list", "get_regions_item", "get_events_item", "get_search_item"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups({"get_regions_list", "get_regions_item", "get_events_item", "get_search_item"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_regions_list", "get_regions_item", "get_events_item"})
      */
     private $image;
 
@@ -41,6 +45,7 @@ class Region
 
     /**
      * @ORM\OneToMany(targetEntity=Event::class, mappedBy="region")
+     * @Groups({"get_regions_list", "get_regions_item"})
      */
     private $events;
 
@@ -53,6 +58,12 @@ class Region
     {
         $this->events = new ArrayCollection();
         $this->users = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int

@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\GenreRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -16,16 +17,19 @@ class Genre
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"get_genres_list", "get_genres_item", "get_search_item"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups({"get_genres_list", "get_genres_item", "get_search_item"})
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_genres_list", "get_genres_item", "get_search_item"})
      */
     private $image;
 
@@ -41,14 +45,22 @@ class Genre
 
     /**
      * @ORM\ManyToMany(targetEntity=Event::class, mappedBy="genres")
+     * @Groups({"get_genres_list", "get_genres_item"})
      */
     private $events;
+
 
     public function __construct()
     {
         $this->events = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+    
     public function getId(): ?int
     {
         return $this->id;

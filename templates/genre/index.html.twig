@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Listes des genres{% endblock %}
+
+{% block body %}
+    <div class="container ">
+        <nav class="nav navbar">
+            <div class="col-sm-6">
+                <h1>Liste des genres</h1>
+                {{ include('_flash_messages.html.twig') }}
+            </div>   
+            <a class="btn btn-success" href="{{ path('back_genre_create') }}">Ajouter</a>
+        </nav>
+
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th class="d-none d-md-table-cell">Image</th>
+                    <th class='col-1 text-end'>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for genre in genres %}
+                    <tr>
+                        <td>{{ genre.id }}</td>
+                        <td>{{ genre.name }}</td>
+                        <td class="d-none d-md-table-cell">{{ genre.image }}</td>
+                        <td class= "d-sm-flex">
+                            <a  class="buttons btn btn-warning" href="{{ path('back_genre_update', {'id': genre.id}) }}">Editer</a>
+                            {{ include('genre/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item {{ (page == 1) ? 'disabled' : '' }}">
+                    <a class="page-link" href="?page={{ page - 1 }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>  
+                    {% set pages = (total / limit)|round(0, 'ceil') %}
+                    {% for item in 1..pages %}
+                    <li class="page-item {{ (page == item) ? "active" : "" }}">
+                        <a class="page-link" href="?page={{ item }}">{{ item }}</a>
+                    </li>
+                    {% endfor %}
+                <li class="page-item {{ (page == pages) ? 'disabled' : '' }}">
+                    <a class="page-link" href="?page={{ page + 1 }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+{% endblock %}

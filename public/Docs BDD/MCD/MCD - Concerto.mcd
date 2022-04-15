@@ -1,0 +1,11 @@
+Is in, 11 EVENT, 0N REGION
+EVENT: event_code, name, description, date, hour, price, image, link_ticketing, slug,
+Belongs To, 1N EVENT, 0N GENRE
+
+REGION: region_code, name, image
+Has, 0N USER, 11 EVENT
+GENRE: genre_code, name, image
+
+In, 01 USER, 0N REGION
+USER: mail,  username, password, active, role
+:

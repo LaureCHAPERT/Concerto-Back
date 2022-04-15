@@ -52,7 +52,7 @@ class RegionRepository extends ServiceEntityRepository
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
+            ->andWhere('r.id = :val')
             ->setParameter('val', $value)
             ->orderBy('r.id', 'ASC')
             ->setMaxResults(10)
@@ -61,16 +61,35 @@ class RegionRepository extends ServiceEntityRepository
         ;
     }
     */
-
-    /*
-    public function findOneBySomeField($value): ?Region
+    
+    public function findAllEventsByOneRegion(int $regionId)
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        // creation of a custom query
+        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
+        $qb = $this->createQueryBuilder('r')
+            ->addSelect('e')
+            ->innerJoin( 'r.events', 'e')
+            ->where('e.region = :regionId')
+            ->setParameter('regionId', $regionId);
+        
+        // query retrieval
+        $query = $qb->getQuery();
+        
+        // query execute
+        return $query->execute();
     }
-    */
+    
+    public function findAllRegions()
+    {
+        // creation of a custom query
+        // https://www.doctrine-project.org/projects/doctrine-orm/en/2.8/reference/query-builder.html
+        $qb = $this->createQueryBuilder('r')
+            ->select('r.id', 'r.name', 'r.image');
+        
+        // query retrieval
+        $query = $qb->getQuery();
+        
+        // query execute
+        return $query->execute();
+    }
 }

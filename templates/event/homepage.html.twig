@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Evénements Ile-De-France{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <nav class="nav navbar">
+            <div class="col-sm-6">
+                <h1>Liste des événements en région Ile-De-France</h1>
+            </div>   
+        </nav>
+        <table class="table">
+            <thead>
+                <tr class="flex-grow-1 justify-content-evenly">
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th class="d-none d-md-table-cell">Description</th>
+                    <th class="d-none d-xxl-table-cell">Date</th>
+                    <th class="d-none d-xxl-table-cell">Heure</th>
+                    <th class="d-none d-md-table-cell">Prix</th>
+                    <th class="d-none d-lg-table-cell">Billetterie</th>
+                    <th class="col-1 text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{ event.id }}</td>
+                        <td>{{ event.name }}</td>
+                        <td class="wrap-text d-none d-md-table-cell">{{ event.description }}</td>
+                        <td class="d-none d-xxl-table-cell">{{ event.date ? event.date|date('Y-m-d') : '' }}</td>
+                        <td class="d-none d-md-table-cell">{{ event.hour|date('H:i')}}</td>
+                        <td class="d-none d-md-table-cell">{{ event.price }}</td>
+                        <td class="d-none d-lg-table-cell">{{ event.linkTicketing }}</td>
+                        <td class="d-sm-flex">
+                            <a  class="buttons btn btn-warning" href="{{ path('back_event_update', {'id': event.id}) }}">Editer</a>
+                            {{ include('event/_delete_form.html.twig') }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}    

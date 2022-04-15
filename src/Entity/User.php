@@ -6,11 +6,14 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
      * @ORM\Id
@@ -21,31 +24,38 @@ class User
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Groups({"get_user_item"})
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Groups({"get_user_item"})
      */
     private $image;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_user_item"})
      */
     private $email;
 
     /**
+     * @var string The hashed password
      * @ORM\Column(type="string", length=255)
+     * @Groups({"get_user_item"})
      */
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="json")
+     * @Groups({"get_user_item"})
      */
-    private $role;
+    private $roles = [];
 
     /**
      * @ORM\Column(type="smallint")
+     * @Groups({"get_user_item"})
      */
     private $active;
 
@@ -61,6 +71,7 @@ class User
 
     /**
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="users")
+     * @Groups({"get_user_item"})
      */
     private $regions;
 
@@ -72,6 +83,22 @@ class User
     public function __construct()
     {
         $this->events = new ArrayCollection();
+        $this->setCreatedAt(new \DateTimeImmutable());
+    }
+
+    public function __toString()
+    {
+        return $this->username;
+    }
+
+    /**
+     * The public representation of the user (e.g. a username, an email address, etc.)
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
     }
 
     public function getId(): ?int
@@ -114,7 +141,10 @@ class User
 
         return $this;
     }
-
+    
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
     public function getPassword(): ?string
     {
         return $this->password;
@@ -127,16 +157,40 @@ class User
         return $this;
     }
 
-    public function getRole(): ?string
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
     {
-        return $this->role;
+        $roles = $this->roles;
+        return array_unique($roles);
     }
 
-    public function setRole(string $role): self
+    public function setRoles(array $roles): self
     {
-        $this->role = $role;
+        $this->roles = $roles;
 
         return $this;
+    }
+
+    public function getBestRole() :string
+    {
+        $bestRole = 'Anonymous';
+        if (in_array('ROLE_ADMIN', $this->roles))
+        {
+            return 'Admin';
+        }
+        
+        if (in_array('ROLE_MANAGER', $this->roles))
+        {
+            return 'Manager';
+        }
+
+        if (in_array('ROLE_MODERATOR', $this->roles))
+        {
+            return 'Modérateur.';
+        }
+        return $bestRole;
     }
 
     public function getActive(): ?int
@@ -215,5 +269,25 @@ class User
         }
 
         return $this;
+    }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }

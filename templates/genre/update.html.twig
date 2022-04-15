@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer un Genre{% endblock %}
+
+{% block body %}
+    <h1>Editer un Genre</h1>
+    <div class='container'>
+    {{ include('genre/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+    </div>
+{% endblock %}
