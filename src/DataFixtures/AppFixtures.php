@@ -381,7 +381,7 @@ class AppFixtures extends Fixture
             ],
             [
                 'name' => 'Ninha',
-                'description' => 'Ninha annonce la sortie d\'un nouvel album le 3 décembre  Des nouveaux titres que l\'on pour découvrir en live à partir du mois prochain. Prêt à prendre votre billet ?  ',
+                'description' => 'Ninha annonce la sortie d\'un nouvel album le 3 décembre. Des nouveaux titres que l\'on pourra découvrir en live à partir du mois prochain. Prêt à prendre votre billet ?  ',
                 'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
                 'genre' => 'Hip-Hop',
             ],
