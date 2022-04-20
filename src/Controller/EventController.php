@@ -70,26 +70,39 @@ class EventController extends AbstractController
      */
     public function new(Request $request, EventRepository $eventRepository): Response
     {
-        $event = new Event();
-        $form = $this->createForm(EventType::class, $event);
-        $form->handleRequest($request);
+        
+        /**
+        * Retrieving user in session
+        * @var \App\Entity\User $user
+        */
+        $user = $this->getUser();
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if (in_array('ROLE_MANAGER',$user->getRoles()))
+        {
+            $event = new Event();
+            $form = $this->createForm(EventType::class, $event);
+            $form->handleRequest($request);
 
-            /**
-             * Retrieving user in session
-             * @var \App\Entity\User $user
-             */
-            $user = $this->getUser();
-            $event->setUser($user);
-            $eventRepository->add($event);
+            if ($form->isSubmitted() && $form->isValid()) {
 
-            $this->addFlash('Succés', 'Evénement ajouté.');
 
+                //$region = $user->getRegions();
+                //dd($user->getRegions());
+                $event->setRegion($user->getRegions());
+                $event->setUser($user);
+                $eventRepository->add($event);
+
+                $this->addFlash('Succés', 'Evénement ajouté.');
+
+                return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
+            }
+
+            return $this->renderForm('event/create.html.twig', compact('event', 'form'));
+        }
+        else
+        { 
             return $this->redirectToRoute('back_event_index', [], Response::HTTP_SEE_OTHER);
         }
-
-        return $this->renderForm('event/create.html.twig', compact('event', 'form'));
     }
 
     /**

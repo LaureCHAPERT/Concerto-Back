@@ -51,6 +51,7 @@ class Event
      * @ORM\Column(type="decimal", precision=5, scale=2)
      * @Groups({"get_events_list", "get_events_item", "get_regions_item", "get_search_item", "get_genres_item", "get_events_home"})
      * @Assert\NotBlank
+     * @Assert\Range(max=999, maxMessage="Le prix ne peut pas dépasser {{ limit }} €")
      */
     private $price;
 
@@ -95,7 +96,6 @@ class Event
      * @ORM\ManyToOne(targetEntity=Region::class, inversedBy="events")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"get_events_list", "get_events_item", "get_search_item"})
-     * @Assert\NotBlank
      */
     private $region;
 
