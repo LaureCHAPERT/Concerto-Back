@@ -9,7 +9,7 @@
                 <h1>Liste des événements</h1>
                 {{ include('_flash_messages.html.twig') }}
             </div>   
-            <a class="btn btn-success" href="{{ path('back_event_create') }}">Ajouter</a>
+            <a class="btn btn-success {% if is_granted('ROLE_ADMIN') %}invisible{% endif %}" href="{{ path('back_event_create') }}">Ajouter</a>
         </nav>
         <table class="table">
             <thead>

@@ -49,7 +49,6 @@ class EventType extends AbstractType
                 'multiple' => true,
                 'expanded' => true,
             ])
-            ->add('region')
         ;
     }
 
