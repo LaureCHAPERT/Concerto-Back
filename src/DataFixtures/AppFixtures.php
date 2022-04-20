@@ -238,7 +238,7 @@ class AppFixtures extends Fixture
             ],
             [
                 'name' => 'Trio',
-                'description' => 'Tryo repart en campagne avec un nouvel album. Des nouvelles chansons aux allures métissées que l\'on pourra découvrir en concert dans les semaines et les mois à venir.',
+                'description' => 'Trio repart en campagne avec un nouvel album. Des nouvelles chansons aux allures métissées que l\'on pourra découvrir en concert dans les semaines et les mois à venir.',
                 'image' => 'https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274__340.jpg',
                 'genre' => 'Variété Française',
             ],
@@ -526,14 +526,14 @@ class AppFixtures extends Fixture
                 'name' => 'Via nez',
                 'description' => 'Ses morceaux ont la couleur et la chaleur des feux de joie, le rayonnement des grands embrasements populaires.',
                 'image' => 'https://images.pexels.com/photos/375893/pexels-photo-375893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'genre' => 'Alternatif',
+                'genre' => 'Alternative',
             ],
             [
                 'name' => 'Theremin',
                 'description' => '
                 Pilier de l\'alternatif hexagonal, Theremin est dans son genre un explorateur. Chaque projet est pour le musicien le prétexte d\'emprunter une nouvelle voix. Il sera donc intéressant de voir Theremin en concert transposer en live ses visions.  ',
                 'image' => 'https://images.pexels.com/photos/4407690/pexels-photo-4407690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-                'genre' => 'Alternatif',
+                'genre' => 'Alternative',
             ],
         ];
 
