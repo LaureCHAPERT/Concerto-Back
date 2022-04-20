@@ -12,6 +12,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Validator\Constraints\Length;
 
 class AppFixtures extends Fixture
 {
@@ -474,9 +475,9 @@ class AppFixtures extends Fixture
                 'genre' => 'Electro',
             ],
             [
-                'name' => 'Martin Touareg',
-                'description' => 'Avec plusieurs millions d\'albums vendus dans le monde et de nombreux singles multi-platine, le DJ-producteur-compositeur Martin TOuareg rencontre le même succès depuis 20 ans. Il défend désormais ses titres sur scène, non plus en tant que DJ mais en tant que performer et parfois chanteur avec un spectacle original au format live...',
-                'image' => 'https://images.pexels.com/photos/9005427/pexels-photo-9005427.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'name' => 'OfenPâques',
+                'description' => 'Après le succès mondial de leurs hits , les deux prodiges d\'Ofenbach se préparent à électriser la France lors de leur première tournée .',
+                'image' => 'https://images.pexels.com/photos/11401290/pexels-photo-11401290.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
                 'genre' => 'Electro',
             ],
             [
@@ -511,13 +512,19 @@ class AppFixtures extends Fixture
             ],
             [
                 'name' => 'Tonton Dave',
-                'description' => 'Tonton Dave sera en concert en octobre. Notre roi du Reggae français nous fera un concert dans le pur style Jamaïcain. Prenez vite votre billet!',
+                'description' => 'Tonton Dave sera en concert en octobre. Notre roi du Reggae français nous fera un concert dans le pur style Jamaïcain. Prenez vite vos billets!',
                 'image' => 'https://cdn.pixabay.com/photo/2017/10/02/21/08/music-2810220_960_720.jpg',
-                'genre' => 'Funk',
+                'genre' => 'Reggae',
+            ],
+            [
+                'name' => 'Pat Tryce',
+                'description' => 'Pat Tryce sera en concert en avril. Cet artiste au reggae planant . Prenez vite vos billets!',
+                'image' => 'https://cdn.pixabay.com/photo/2021/05/28/08/57/man-6290275_960_720.jpg',
+                'genre' => 'Reggae',
             ],
         ];
 
-        for ($i = 0; $i <= 24; $i++)
+        for ($i = 0; $i <= count($events) - 1; $i++)
         {
             $event = new Event;
             $divider = '-';
