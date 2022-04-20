@@ -236,6 +236,57 @@ class AppFixtures extends Fixture
                 'genre' => 'Classique',
             ],
             [
+                'name' => 'Trio',
+                'description' => 'Tryo repart en campagne avec un nouvel album. Des nouvelles chansons aux allures métissées que l\'on pourra découvrir en concert dans les semaines et les mois à venir.',
+                'image' => 'https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274__340.jpg',
+                'genre' => 'Variété Française',
+            ],
+            [
+                'name' => 'Maestro',
+                'description' => 'Après plusieurs années de silence, le belge est de retour en 2022 avec la sortie en mars de son nouvel album . Côté concerts, Maestro fera la tournée des festivals durant l\'été 2022. Maestro est prêt à nous faire danser à nouveau !',
+                'image' => 'https://cdn.pixabay.com/photo/2020/07/23/11/58/man-5431169__340.jpg',
+                'genre' => 'Variété Française',
+            ],
+            [
+                'name' => 'Micro et Oli',
+                'description' => 'Rappeurs toulousains, ils sont des références du paysage musicial français. Très complices, les deux frères sont à la fois auteurs et compositeurs, leur musique est acompagnée de textes percutants mais ne se voulant jamais moralisateur.',
+                'image' => 'https://images.pexels.com/photos/748838/pexels-photo-748838.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Hip-Hop',
+            ],
+            [
+                'name' => 'Mouse',
+                'description' => 'Emmené par le charismatique Mathew, le trio a su s\'imposer entre Nirvana et Radiohead. L\'un des plus grands groupes de rock de la planète.',
+                'image' => 'https://images.pexels.com/photos/417473/pexels-photo-417473.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Rock',
+            ],
+            [
+                'name' => 'First Train',
+                'description' => 'Les blousons du rock and roll, sans ses clichés. Les slims de la pop, sans sa naïveté. Les boots du blues, sans son prosaïsme. Les jeunes First Train libèrent un rock and roll hypnotique, dans un univers écorché et maîtrisé.
+                ',
+                'image' => 'https://images.pexels.com/photos/7715766/pexels-photo-7715766.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Rock',
+            ],
+            [
+                'name' => '-N-',
+                'description' => '-N-repart en tournée ! D\'abord dans les clubs de concerts pour dévoiler en live les titres de son nouvel album  puis à l\'affiche des festivals de l\'été.  Les fans ont déjà leur billet ! Et vous ?
+
+                ',
+                'image' => 'https://images.pexels.com/photos/8044204/pexels-photo-8044204.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Rock',
+            ],
+            [
+                'name' => 'Zuccherry',
+                'description' => 'Le patron du rhythm\'n\'blues italien, était de retour en 2019 avec un nouvel album qui le met à nouveau sur les routes. On verra prochainement le soulman italien en concert en France pour interpréter ses derniers titres ',
+                'image' => 'https://images.pexels.com/photos/1450114/pexels-photo-1450114.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Pop',
+            ],
+            [
+                'name' => 'Dragons imaginaires',
+                'description' => 'Avec un son indie-rock aux influences électro, le groupe Dragons imaginaires a su conquérir la planète avec son dernier album. Le groupe a su s\'imposer dans le coeur des fans. ',
+                'image' => 'https://images.pexels.com/photos/3769099/pexels-photo-3769099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Rock',
+            ],
+            [
                 'name' => 'Burin Rouge',
                 'description' => 'Ce groupe phare de la scène des années 80 est enfin de retour pour une toute nouvelle tournée!',
                 'image' => 'https://cdn.pixabay.com/photo/2020/05/11/09/03/conductor-5157153_960_720.jpg',
@@ -254,6 +305,19 @@ class AppFixtures extends Fixture
                 'genre' => 'Classique',
             ],
             [
+                'name' => 'JYL',
+                'description' => 'Le Marseillais Jyl réalise en 2014 l\'exploit de passer du rap souterrain à la lumière des meilleures ventes du top albums.',
+                'image' => 'https://images.pexels.com/photos/2067689/pexels-photo-2067689.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Hip-Hop',
+            ],
+
+            [
+                'name' => 'MOSHI',
+                'description' => 'Deux ans après un premier album écoulé à plus de 200 000 exemplaires, celle que l\'on qualifie de nouvelle étoile de la chanson française a sorti un deuxième opus le 5 juin 2020. C\'est dans le tourbus d\'une tournée de plus de 140 dates à travers la France que naît ce nouvel album.',
+                'image' => 'https://images.pexels.com/photos/2838868/pexels-photo-2838868.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Hip-Hop',
+            ],
+            [
                 'name' => 'Damien Marlé',
                 'description' => 'Sublime combo entre reggae coloré et bonnes vibrations. Efficace et coloré!!',
                 'image' => 'https://cdn.pixabay.com/photo/2016/01/31/18/06/man-1171806_960_720.jpg',
@@ -261,7 +325,7 @@ class AppFixtures extends Fixture
             ],
             [
                 'name' => 'Donakil',
-                'description' => 'Activiste du reggae et de la musique indépendante depuis les années 2000, Donakil nous délivre des lives brûlants imprégnés de tous ces voyages',
+                'description' => 'Activiste du reggae et de la musique indépendante depuis les années 2000, Donakil nous délivre des lives brûlants imprégnés de tous ses voyages',
                 'image' => 'https://cdn.pixabay.com/photo/2017/03/27/15/13/man-2179313_960_720.jpg',
                 'genre' => 'Reggae',
             ],
@@ -323,19 +387,19 @@ class AppFixtures extends Fixture
                 'name' => 'Antarctic Monkeys',
                 'description' => '4 jeunes partis pour conquérir la planète rock avec des chansons très engagées : c\'est maintenant dispo!',
                 'image' => 'https://cdn.pixabay.com/photo/2018/06/30/09/29/monkey-3507317_960_720.jpg',
-                'genre' => 'Alternatif',
+                'genre' => 'Alternative',
             ],
             [
                 'name' => 'Bob Harley',
                 'description' => 'Bob Harley sort son nouvel album dans un style inqualifiable mais très élaboré. On aime la sauce roots teintée de hip-hop et de reggae',
                 'image' => 'https://cdn.pixabay.com/photo/2017/08/02/17/38/biker-2572582_960_720.jpg',
-                'genre' => 'Alternatif',
+                'genre' => 'Alternative',
             ],
             [
                 'name' => 'Skaka Punk',
                 'description' => 'Ces fous furieux de la scène annoncent leur concert du futur : un punk numérique et des effets scéniques poussés à l\'extrême!! On attend de pied ferme leur premier concert de l\'année',
                 'image' => 'https://cdn.pixabay.com/photo/2016/03/04/00/25/monkey-1235299_960_720.jpg',
-                'genre' => 'Alternatif',
+                'genre' => 'Alternative',
             ],
             [
                 'name' => 'Couine',
@@ -385,6 +449,72 @@ class AppFixtures extends Fixture
                 'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
                 'genre' => 'Hip-Hop',
             ],
+            [
+                'name' => 'Jami Irokoi',
+                'description' => 'Le groupe Jami Irokoi en tournée mondiale vient nous rendre visite! Ne manquer cette occasion, le dernioer concert en France remonte à 10 ans.',
+                'image' => 'https://cdn.pixabay.com/photo/2020/07/23/11/58/man-5431169_960_720.jpg',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Stevie Merveille',
+                'description' => 'Stevie annonce sa dernière tournée le 6 juin. Concert qui va rester dans les mémoires, à ne surtout pas manquer!  ',
+                'image' => 'https://cdn.pixabay.com/photo/2019/09/20/08/45/mud-morganfield-4491155_960_720.jpg',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Mute',
+                'description' => 'MEUTE est une Techno Marching Band - une douzaine de batteurs et de cornistes de Hambourg / Allemagne qui accomplissent le travail d\'un DJ avec leurs instruments acoustiques. Cette fanfare d\'un autre genre se balade sur l\'alliance de la techno et de la house.',
+                'image' => 'https://images.pexels.com/photos/5781090/pexels-photo-5781090.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Martin Touareg',
+                'description' => 'Avec plusieurs millions d\'albums vendus dans le monde et de nombreux singles multi-platine, le DJ-producteur-compositeur Martin TOuareg rencontre le même succès depuis 20 ans. Il défend désormais ses titres sur scène, non plus en tant que DJ mais en tant que performer et parfois chanteur avec un spectacle original au format live...',
+                'image' => 'https://images.pexels.com/photos/9005427/pexels-photo-9005427.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Martin Touareg',
+                'description' => 'Avec plusieurs millions d\'albums vendus dans le monde et de nombreux singles multi-platine, le DJ-producteur-compositeur Martin TOuareg rencontre le même succès depuis 20 ans. Il défend désormais ses titres sur scène, non plus en tant que DJ mais en tant que performer et parfois chanteur avec un spectacle original au format live...',
+                'image' => 'https://images.pexels.com/photos/9005427/pexels-photo-9005427.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Les pierres qui roulent',
+                'description' => 'Les pierres qui roulent c\'est la formation de plusieurs diables du rock\'n roll. Ils font leur chemin dans le monde de la musique et restent un pilier indestructible depuis 60 ans. Alors que tant d\'autres ont disparu, ils continuent de délivrer leur musique survoltée. Leur Sixty Tour 22 compte 14 dates en Europe dont deux concerts en France. ',
+                'image' => 'https://cdn.pixabay.com/photo/2012/12/22/03/34/keith-richards-71853__480.jpg',
+                'genre' => 'Rock',
+            ],
+            [
+                'name' => 'Diana Cross',
+                'description' => 'Diana Cross sera en concert le 14 mai, cette artiste mythique nous annonce un concert inoubliable! ',
+                'image' => 'https://cdn.pixabay.com/photo/2017/08/25/11/54/concert-2679903_960_720.jpg',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Jason Key',
+                'description' => 'Jason Key artiste populaire du Funk sera en concert en novembre. Venez nombreux découvrir ou redécouvrir cet artiste outre-Atlantique.',
+                'image' => 'https://cdn.pixabay.com/photo/2022/04/01/17/24/singer-7105305_960_720.jpg',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Bruno Jupiter',
+                'description' => 'Bruno Jupiter donnera un concert venu de l\'espace. Venez vibrer lors de ce concert interstellaire.',
+                'image' => 'https://cdn.pixabay.com/photo/2017/08/01/14/51/concert-2566001_960_720.jpg',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Keziah John',
+                'description' => 'Keziah John viendra enflammer la scène lors de son prochain concert, à ne surtout pas manquer.',
+                'image' => 'https://cdn.pixabay.com/photo/2020/09/05/03/20/singer-5545481_960_720.jpg',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Tonton Dave',
+                'description' => 'Tonton Dave sera en concert en octobre. Notre roi du Reggae français nous fera un concert dans le pur style Jamaïcain. Prenez vite votre billet!',
+                'image' => 'https://cdn.pixabay.com/photo/2017/10/02/21/08/music-2810220_960_720.jpg',
+                'genre' => 'Funk',
+            ],
         ];
 
         for ($i = 0; $i <= 24; $i++)
@@ -400,7 +530,8 @@ class AppFixtures extends Fixture
             $text = preg_replace('~[^\pL\d]+~u', $divider, $events[$i]['name']);
             $slug = strtolower($text);
             $event->setSlug($slug);
-            $event->setHour($faker->time('H:i'));
+            $hour = date_create_from_format('H:i', $faker->time('H:i'));
+            $event->setHour($hour);
             $randomIndex = array_rand($regionObjects);
             $event->setRegion($regionObjects[$randomIndex]);
             foreach ($genreObjects as $genre)

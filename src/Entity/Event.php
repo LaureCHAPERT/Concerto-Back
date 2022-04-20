@@ -106,7 +106,7 @@ class Event
     private $user;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="time", nullable=true)
      * @Groups({"get_events_list", "get_events_item", "get_genres_item", "get_search_item", "get_regions_item", "get_events_home"})
      */
     private $hour;
@@ -283,12 +283,12 @@ class Event
         return $this;
     }
 
-    public function getHour(): ?string
+    public function getHour(): ?\DateTimeInterface
     {
         return $this->hour;
     }
 
-    public function setHour(?string $hour): self
+    public function setHour(?\DateTimeInterface $hour): self
     {
         $this->hour = $hour;
 
