@@ -518,9 +518,22 @@ class AppFixtures extends Fixture
             ],
             [
                 'name' => 'Pat Tryce',
-                'description' => 'Pat Tryce sera en concert en avril. Cet artiste au reggae planant . Prenez vite vos billets!',
+                'description' => 'Pat Tryce sera en concert en avril. Cet artiste au reggae planant fera plusieurs dates en France. Prenez vite vos billets!',
                 'image' => 'https://cdn.pixabay.com/photo/2021/05/28/08/57/man-6290275_960_720.jpg',
                 'genre' => 'Reggae',
+            ],
+            [
+                'name' => 'Via nez',
+                'description' => 'Ses morceaux ont la couleur et la chaleur des feux de joie, le rayonnement des grands embrasements populaires.',
+                'image' => 'https://images.pexels.com/photos/375893/pexels-photo-375893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Alternatif',
+            ],
+            [
+                'name' => 'Theremin',
+                'description' => '
+                Pilier de l\'alternatif hexagonal, Theremin est dans son genre un explorateur. Chaque projet est pour le musicien le prétexte d\'emprunter une nouvelle voix. Il sera donc intéressant de voir Theremin en concert transposer en live ses visions.  ',
+                'image' => 'https://images.pexels.com/photos/4407690/pexels-photo-4407690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Alternatif',
             ],
         ];
 
