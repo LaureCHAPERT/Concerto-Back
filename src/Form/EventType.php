@@ -10,6 +10,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,7 +30,7 @@ class EventType extends AbstractType
                 'format' => 'yyyy-MM-dd', 
                 'widget' => 'single_text',                
             ])
-            ->add('hour', null, [
+            ->add('hour', TimeType::class, [
                 'label' =>'Heure'
             ])
             ->add('price',IntegerType::class,[
