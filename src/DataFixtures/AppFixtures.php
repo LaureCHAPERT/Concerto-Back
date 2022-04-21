@@ -535,6 +535,12 @@ class AppFixtures extends Fixture
                 'image' => 'https://images.pexels.com/photos/4407690/pexels-photo-4407690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Alternative',
             ],
+            [
+                'name' => 'David Guetto',
+                'description' => 'Toujours en tournée dans toute la France. Le pilier de la scène électronique Française, symbole de la French touch, mondialement connu, n\'a pas perdu de son talent et à encore beaucoup d\'énergie à revendre. On vous attend nombreux !',
+                'image' => 'https://cdn.pixabay.com/photo/2017/04/11/22/55/lightshow-2223127_960_720.jpg',
+                'genre' => 'Electro',
+            ],
         ];
 
         for ($i = 0; $i <= count($events) - 1; $i++)
