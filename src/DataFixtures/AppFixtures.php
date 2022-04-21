@@ -239,13 +239,13 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Trio',
                 'description' => 'Trio repart en campagne avec un nouvel album. Des nouvelles chansons aux allures métissées que l\'on pourra découvrir en concert dans les semaines et les mois à venir.',
-                'image' => 'https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274__340.jpg',
+                'image' => 'https://images.pexels.com/photos/1427368/pexels-photo-1427368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Variété Française',
             ],
             [
                 'name' => 'Maestro',
                 'description' => 'Après plusieurs années de silence, le belge est de retour en 2022 avec la sortie en mars de son nouvel album . Côté concerts, Maestro fera la tournée des festivals durant l\'été 2022. Maestro est prêt à nous faire danser à nouveau !',
-                'image' => 'https://cdn.pixabay.com/photo/2020/07/23/11/58/man-5431169__340.jpg',
+                'image' => 'https://images.pexels.com/photos/7754770/pexels-photo-7754770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Variété Française',
             ],
             [
@@ -308,7 +308,7 @@ class AppFixtures extends Fixture
             [
                 'name' => 'JYL',
                 'description' => 'Le Marseillais Jyl réalise en 2014 l\'exploit de passer du rap souterrain à la lumière des meilleures ventes du top albums.',
-                'image' => 'https://images.pexels.com/photos/2067689/pexels-photo-2067689.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'image' => 'https://images.pexels.com/photos/802195/pexels-photo-802195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Hip-Hop',
             ],
 
@@ -429,19 +429,19 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Jason Khey',
                 'description' => 'Jason Khey nous présente son nouvel album à travers une tournée annoncée très colorée et très bien entourée puisqu\'il sera accompagné d\'une chorale gospel : on attend ça impatiemment',
-                'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
+                'image' => 'https://images.pexels.com/photos/11372431/pexels-photo-11372431.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
                 'genre' => 'Funk',
             ],
             [
                 'name' => 'Duluxe',
                 'description' => 'S\'inspirant librement des grands maitres du hip hop, du jazz et de la funk, Duluxe crée sa propre recette musicale, unique en son genre avec une seule constante : le groove ! Autant vous dire qu\'en concert Duluxe, ça remue.',
-                'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
+                'image' => 'https://images.pexels.com/photos/4142420/pexels-photo-4142420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Pop',
             ],
             [
                 'name' => 'JAVA',
                 'description' => 'Ce quatuor parisien  qui mélange rap et accordéon, cartonne avec des textes passés au vitriol. ',
-                'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
+                'image' => 'https://images.pexels.com/photos/838685/pexels-photo-838685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Variété Française',
             ],
             [
@@ -471,13 +471,13 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Martin Touareg',
                 'description' => 'Avec plusieurs millions d\'albums vendus dans le monde et de nombreux singles multi-platine, le DJ-producteur-compositeur Martin TOuareg rencontre le même succès depuis 20 ans. Il défend désormais ses titres sur scène, non plus en tant que DJ mais en tant que performer et parfois chanteur avec un spectacle original au format live...',
-                'image' => 'https://images.pexels.com/photos/9005427/pexels-photo-9005427.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'image' => 'https://images.pexels.com/photos/1649693/pexels-photo-1649693.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Electro',
             ],
             [
                 'name' => 'OfenPâques',
                 'description' => 'Après le succès mondial de leurs hits , les deux prodiges d\'Ofenbach se préparent à électriser la France lors de leur première tournée .',
-                'image' => 'https://images.pexels.com/photos/11401290/pexels-photo-11401290.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'image' => 'https://images.pexels.com/photos/1694900/pexels-photo-1694900.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Electro',
             ],
             [
@@ -534,6 +534,224 @@ class AppFixtures extends Fixture
                 Pilier de l\'alternatif hexagonal, Theremin est dans son genre un explorateur. Chaque projet est pour le musicien le prétexte d\'emprunter une nouvelle voix. Il sera donc intéressant de voir Theremin en concert transposer en live ses visions.  ',
                 'image' => 'https://images.pexels.com/photos/4407690/pexels-photo-4407690.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Alternative',
+            ],
+            [
+                'name' => 'Camille Jordane',
+                'description' => '
+                Chanteuse de talent mais aussi actrice césarisée, Camille Jordane est une artiste accomplie. Elle rafraîchit et réinvente la chanson française. Raconter son quotidien de femme, sur des mélodies entêtantes et envoûtantes : voici sa marque de fabrique. ',
+                'image' => 'https://images.pexels.com/photos/1864641/pexels-photo-1864641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Alternative',
+            ],
+            [
+                'name' => 'Rodriguo',
+                'description' => '            
+                Née à Rio de Janeiro le 1er juillet 1967, Rodriguo s\'intéresse à la musique dès son plus jeune âge et, enfant, il prend des cours de piano et de batterie. À l\'adolescence,il intensifie ses études de chant et de théorie musicale, s\'intéresse de près à la musique brésilienne, et chante dans les groupes de ses amis.
+',
+                'image' => 'https://images.pexels.com/photos/2124569/pexels-photo-2124569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Alternative',
+            ],
+            [
+                'name' => 'Antibalos',
+                'description' => '            
+                Avec une solide section de cuivres, un gang de percussionnistes experts, une rythmique funky et des textes chantés en anglais, espagnol et yoruba, Antibalos possède une puissance de feu prête à donner un nouveau souffle torride à l\'afrobeat alternatif.  Antibalos est décapant de sons électriques et traditionnels. En somme, un groove dansant et hypnotique.
+',
+                'image' => 'https://images.pexels.com/photos/1365167/pexels-photo-1365167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Alternative',
+            ],
+            [
+                'name' => 'Vaudoo',
+                'description' => '            
+                Contraints au confinement, comme une bonne partie de la planète,les membres du groupe Vaudoo n’ont eu d’autre choix que de se retrancher en studio, des retrouvailles pour à nouveau invoquer les divinités et leurs forces spirituelles. Au départ pour un EP, mais les puissances créatrices ne se contrarient pas et impossible de les repousser quand elles ont décidé de s’inviter plus longtemps.Un message d’espoir autant qu’un appel au rassemblement pour traverser la tourmente et ressortir meilleurs.
+',
+                'image' => 'https://images.pexels.com/photos/6826755/pexels-photo-6826755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Alternative',
+            ],
+            [
+                'name' => 'Camil',
+                'description' => '            
+                L\'auteur-compositeur-interprète et producteur colombien Camil, considéré comme l\'un des plus grands représentants de la nouvelle pop, revient en France après son tour du monde! Il y a étendu son exploration de genres tels que la pop, la champeta, la cumbia, l\'urbain, le corrido et le folklore colombien, en jouant de divers instruments tels que la guitare, le cuatro, le ronroco, le charango et le piano.
+',
+                'image' => 'https://images.pexels.com/photos/8973602/pexels-photo-8973602.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Alternative',
+            ],
+            [
+                'name' => 'Vivaldi et les quatres saisons',
+                'description' => '            
+                L\'Orchestre Ensemble reprend ce classique intemportel de Vivaldi.
+',
+                'image' => 'https://images.pexels.com/photos/2102568/pexels-photo-2102568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Classique',
+            ],
+            [
+                'name' => 'Aïka',
+                'description' => '            
+                Le plus intemporel des opéras, sera interprété cette année par plus de 100 artistes sur scène, porté par une scénographie spectaculaire et des décors grandioses, pour un spectacle pharaonique.',
+                'image' => 'https://images.pexels.com/photos/573914/pexels-photo-573914.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Classique',
+            ],
+            [
+                'name' => 'Camille et July Berthalet',
+                'description' => '            
+                Après avoir été révélées au grand public lors de show télévisés Camille et Julie se sont imposées comme meilleures ventes de musique classique.
+                Elles reviennent avec une nouvelle tournée, insufflant une nouvelle énergie à leur univers artistique.',
+                'image' => 'https://images.pexels.com/photos/7095043/pexels-photo-7095043.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Classique',
+            ],
+            [
+                'name' => 'Jean-michel Blaz',
+                'description' => '            
+                Maîtrisant déjà l\'art de tisser beauté et prouesses techniques au piano, Jean-Michel Blaz compose pour ensemble pour la première fois de sa carrière.',
+                'image' => 'https://images.pexels.com/photos/6192181/pexels-photo-6192181.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Classique',
+            ],
+            [
+                'name' => 'Ludovico',
+                'description' => '            
+                Ses 3 concerts à Paris affichant complets en quelques semaines, Ludovico Einaudi ajoute une série de concerts à sa tournée !
+                Un concert inédit pour nous présenter son nouvel album solo. De nouvelles compositions dans leurs formes la plus pure et la plus intime, mettant en valeur son style si unique.',
+                'image' => 'https://images.pexels.com/photos/1631666/pexels-photo-1631666.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Classique',
+            ],
+            [
+                'name' => 'Sick and Baw',
+                'description' => '            
+                La force rythmique du piano et de la percussion alliée au lyrisme du violoncelle offre une écoute rafraîchissante des œuvres passionnantes de ce trio étonnant qui saura charmer et éblouir un large public avec des nouvelles couleurs et des sonorités surprenantes. L’album reste bien empreint de cette nostalgie palpable du tango, ici interprété par deux argentins en exil, loin de leur terre natale.',
+                'image' => 'https://images.pexels.com/photos/7095836/pexels-photo-7095836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+                'genre' => 'Classique',
+            ],
+            [
+                'name' => 'Spring Festival',
+                'description' => '            
+                Summer Festival envahit la ville de ses décibels ! Les plus grandes stars DJ s\'y donnent en effet rendez-vous pour une grande fiesta électro , qui pour la toute première fois  durera deux jours, au plus grand bonheur des fans.',
+                'image' => 'https://images.pexels.com/photos/3633307/pexels-photo-3633307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Drummers',
+                'description' => '            
+                Ces trois frères tambourinent depuis leur naissance pour nous offrir une performance de jonglerie musicale virevoltante et remplie d\'humour.Entre rythmes effrénés et poésie, les trois frères mélangent allègrement les disciplines.Une expérience inédite de jonglerie musicale, des numéros époustouflants, un l’humour décalé ! Inclassable ! ',
+                'image' => 'https://images.pexels.com/photos/5781090/pexels-photo-5781090.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Rock',
+            ],
+            [
+                'name' => 'Electrik Deux',
+                'description' => ' C’est un groupe inclassable ! Depuis quinze ans, Electrik Deux revisite et bouleverse l’héritage jazz, soul, funk sur toutes les scènes mondiales. Le groupe s’aventure en territoire inconnu, quelque part entre groove organique et émotions digitales. Comme si le groove des années 70 rencontrait la french touch et l’électro d’aujourd’hui. Sans rien renier de ses fondamentaux, le groupe réussit l’alliance des époques et des courants musicaux dans un nouveau son unique et intemporel.   ',
+                'image' => 'https://images.pexels.com/photos/2240766/pexels-photo-2240766.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Swiss House',
+                'description' => ' En même temps que leur nouveau single, Swiss House a annoncé une tournée internationale, leur première vraie tournée depuis 2012. Longtemps vénérés par les fans pour leurs performances live grandioses, les membres du groupe ont vendu plus d\'un million de billets lors de leur précédente sortie. ',
+                'image' => 'https://images.pexels.com/photos/3682820/pexels-photo-3682820.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Ben Restassis',
+                'description' => ' Le Dj italien Benny Benassi est connu pour ses productions tech house, house et electroclash. 2022 marque l\'année d\'un fabuleux nouvel album et donc d\'une tournée!',
+                'image' => 'https://images.pexels.com/photos/1845537/pexels-photo-1845537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Fider',
+                'description' => ' Issu d’influences deep, house et hip-pop, la première sortie de ce nouveau projet sera un rework contemporain de son dernier album, qui lui vaudra la validation une victoire de la musique. ',
+                'image' => 'https://images.pexels.com/photos/3400600/pexels-photo-3400600.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Laurent Loup',
+                'description' => ' 
+                Laurent Loup fait danser les frénétiques de la house et du groove depuis l\'orée des nineties.  ',
+                'image' => 'https://images.pexels.com/photos/2461694/pexels-photo-2461694.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Electro',
+            ],
+            [
+                'name' => 'Le gang des cool ',
+                'description' => ' 
+                The Kings of Disco Funk revient en tournée pour faire danser toute la France  Les frères de la soul reviennent mettre le feu au public après leur dernier concert en 2011 au Palais des Congrès à Paris.
+  ',
+                'image' => 'https://images.pexels.com/photos/9010057/pexels-photo-9010057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Janet ',
+                'description' => ' 
+                Le show de Janet n’est pas un simple spectacle, ni une succession de numéros, c’est une expérience hors du temps, un show immersif sur des tubes disco funk joués et chantés par un orchestre live survolté. La soirée sera dirigée par une maîtresse de cérémonie déjantée, fil rouge du spectacle qui tiendra le public en haleine. Cette sublime diva sera accompagnée par un « assistant », véritable trublion, qui pourra faire déraper le spectacle à tout moment. Elle emmènera dans sa folie danseuses, danseurs, artistes, musiciens et public.
+  ',
+                'image' => 'https://images.pexels.com/photos/9009524/pexels-photo-9009524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Mateo Parker ',
+                'description' => ' 
+                La "Mateo\'s touch", souvent critiquée par la presse spécialisée, connaît un enthousiasme débordant du côté du public, et particulièrement en France où il fait salle comble à chaque passage.
+
+                Le pape du funk fait encore et toujours groover les salles.
+  ',
+                'image' => 'https://images.pexels.com/photos/8968215/pexels-photo-8968215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Funk',
+            ],
+            [
+                'name' => 'Japanese Man ',
+                'description' => ' 
+                A l\'occasion des 15 ans du Label, les membres de Japanese Man ,se retrouvent en Live pour une création commune autour de leur dernier album.
+                Pour présenter sur scène cet album et les classiques de chaque groupe, ils invitent des monstres de la scène hip-hop internationale, à les rejoindre pour un show exclusif et explosif, mixant les univers musicaux et visuels des 3 groupes entre HipHop, Electro Tropical et Scratch Music.
+  ',
+                'image' => 'https://images.pexels.com/photos/1845085/pexels-photo-1845085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Hip-Hop',
+            ],
+            [
+                'name' => 'Burn DMC ',
+                'description' => ' 
+                Sans nul doute, le groupe de rap US qui, le premier aura marqué l\'histoire de ce mouvement en l\'amenant auprès d\'un large public.
+  ',
+                'image' => 'https://images.pexels.com/photos/3656773/pexels-photo-3656773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Hip-Hop',
+            ],
+            [
+                'name' => 'Burn DMC ',
+                'description' => ' 
+                Burn DMC est un artiste à part. Il plane entre rêve et réalité dans l\'univers magique de son dernier album il développe des flows aériens et un lyrisme honnête et touchant.
+  ',
+                'image' => 'https://images.pexels.com/photos/3648641/pexels-photo-3648641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Hip-Hop',
+            ],
+            [
+                'name' => 'Led Shiran ',
+                'description' => ' 
+                Et c\'est reparti pour une nouvelle tournée des stades ! Polly Siz présentera en concert les titres de son nouvel album mais aussi les tubes de ses précédents albums. Avec l\'énergie qu\'on lui connait, comptez sur le britannique pour faire de ses concerts des prestations qui resteront dans la mémoire de chaque spectateur. Prêt pour réserver votre billet ?
+  ',
+                'image' => 'https://images.pexels.com/photos/838702/pexels-photo-838702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Pop',
+            ],
+            [
+                'name' => 'Polly Siz ',
+                'description' => ' 
+                Curieuse et avide, elle a pu s’ouvrir à de nouvelles influences.Elle est revenue de New York avec des percussions mélangées aux programmations Hip Hop, des flows hypnotiques et des claps qui annoncent les sirènes des riffs de guitares émanant d’un garage de Brooklyn. Elle y a notamment fait la rencontre de Luke Jenner (the Rapture), grand chantre du rock electro, et des gamins du Hip Hop survitaminé de The Skins, qui ont été déterminants dans la couleur et la forme de cet opus.
+  ',
+                'image' => 'https://images.pexels.com/photos/3358299/pexels-photo-3358299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Pop',
+            ],
+            [
+                'name' => 'Duo Lipo ',
+                'description' => ' 
+                Duo Lipo  est une chanteuse pop née à Londres. Après trois premiers singles très remarqués au Royaume-Uni, elle s\'embarque pour une tournée et rencontre le succès à l\'international .
+  ',
+                'image' => 'https://images.pexels.com/photos/1150836/pexels-photo-1150836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Pop',
+            ],
+            [
+                'name' => 'Franck Maintenant ',
+                'description' => ' L\'odyssée pop de Franck Maintenant tient en grande partie au mélange unique de mélodies pop et de beats hyper-dansants .
+  ',
+                'image' => 'https://images.pexels.com/photos/167445/pexels-photo-167445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Pop',
+            ],
+            [
+                'name' => 'Soldat Louise ',
+                'description' => ' Guitare acoustique et Voix. Nos trois inséparables sont délicieux à souhait, variés, un peu sucré-salé, très tendance dans un registre uniquement de variété française et on en redemande !
+  ',
+                'image' => 'https://images.pexels.com/photos/2277438/pexels-photo-2277438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+                'genre' => 'Pop',
             ],
         ];
 
