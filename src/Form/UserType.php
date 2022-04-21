@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -18,7 +19,7 @@ class UserType extends AbstractType
             ->add('username')
             ->add('image')
             ->add('email')
-            ->add('password', null, [
+            ->add('password', PasswordType::class, [
                 'empty_data' => '',
                 'constraints' => [
                     new NotBlank(),

@@ -17,9 +17,7 @@
                 <tr >
                     <th>Id</th>
                     <th>Pseudo</th>
-                    <th class="d-none d-xl-table-cell">Image</th>
                     <th class="d-none d-md-table-cell">Email</th>
-                    <th class="d-none d-md-table-cell">Password</th>
                     <th class="d-none d-lg-table-cell">Rôle</th>
                     <th class="d-none d-lg-table-cell">Active</th>
                     <th class="col-1 text-end">Actions</th>
@@ -30,9 +28,7 @@
                 <tr>
                     <td>{{ user.id }}</td>
                     <td>{{ user.username }}</td>
-                    <td class="d-none d-xl-table-cell">{{ user.image }}</td>
                     <td class="d-none d-md-table-cell">{{ user.email }}</td>
-                    <td class="d-none d-md-table-cell wrap-text">{{ user.password }}</td>
                     <td class="d-none d-lg-table-cell">{{ user.roles|join(', ') }}</td>
                     <td class="d-none d-lg-table-cell">{{ user.active }}</td>
                     <td class= "d-sm-flex">
