@@ -545,16 +545,14 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Rodriguo',
                 'description' => '            
-                Née à Rio de Janeiro le 1er juillet 1967, Rodriguo s\'intéresse à la musique dès son plus jeune âge et, enfant, il prend des cours de piano et de batterie. À l\'adolescence,il intensifie ses études de chant et de théorie musicale, s\'intéresse de près à la musique brésilienne, et chante dans les groupes de ses amis.
-',
+                Née à Rio de Janeiro le 1er juillet 1967, Rodriguo s\'intéresse à la musique dès son plus jeune âge et, enfant, il prend des cours de piano et de batterie. À l\'adolescence,il intensifie ses études de chant et de théorie musicale, s\'intéresse de près à la musique brésilienne, et chante dans les groupes de ses amis.',
                 'image' => 'https://images.pexels.com/photos/2124569/pexels-photo-2124569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Alternative',
             ],
             [
                 'name' => 'Antibalos',
                 'description' => '            
-                Avec une solide section de cuivres, un gang de percussionnistes experts, une rythmique funky et des textes chantés en anglais, espagnol et yoruba, Antibalos possède une puissance de feu prête à donner un nouveau souffle torride à l\'afrobeat alternatif.  Antibalos est décapant de sons électriques et traditionnels. En somme, un groove dansant et hypnotique.
-',
+                Avec une solide section de cuivres, un gang de percussionnistes experts, une rythmique funky et des textes chantés en anglais, espagnol et yoruba, Antibalos possède une puissance de feu prête à donner un nouveau souffle torride à l\'afrobeat alternatif.  Antibalos est décapant de sons électriques et traditionnels. En somme, un groove dansant et hypnotique.',
                 'image' => 'https://images.pexels.com/photos/1365167/pexels-photo-1365167.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Alternative',
             ],
@@ -667,16 +665,14 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Le gang des cool ',
                 'description' => ' 
-                The Kings of Disco Funk revient en tournée pour faire danser toute la France  Les frères de la soul reviennent mettre le feu au public après leur dernier concert en 2011 au Palais des Congrès à Paris.
-  ',
+                The Kings of Disco Funk revient en tournée pour faire danser toute la France  Les frères de la soul reviennent mettre le feu au public après leur dernier concert en 2011 au Palais des Congrès à Paris.  ',
                 'image' => 'https://images.pexels.com/photos/9010057/pexels-photo-9010057.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Funk',
             ],
             [
                 'name' => 'Janet ',
                 'description' => ' 
-                Le show de Janet n’est pas un simple spectacle, ni une succession de numéros, c’est une expérience hors du temps, un show immersif sur des tubes disco funk joués et chantés par un orchestre live survolté. La soirée sera dirigée par une maîtresse de cérémonie déjantée, fil rouge du spectacle qui tiendra le public en haleine. Cette sublime diva sera accompagnée par un « assistant », véritable trublion, qui pourra faire déraper le spectacle à tout moment. Elle emmènera dans sa folie danseuses, danseurs, artistes, musiciens et public.
-  ',
+                Le show de Janet n’est pas un simple spectacle, ni une succession de numéros, c’est une expérience hors du temps, un show immersif sur des tubes disco funk joués et chantés par un orchestre live survolté. La soirée sera dirigée par une maîtresse de cérémonie déjantée, fil rouge du spectacle qui tiendra le public en haleine. Cette sublime diva sera accompagnée par un « assistant », véritable trublion, qui pourra faire déraper le spectacle à tout moment. Elle emmènera dans sa folie danseuses, danseurs, artistes, musiciens et public.  ',
                 'image' => 'https://images.pexels.com/photos/9009524/pexels-photo-9009524.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Funk',
             ],
@@ -685,8 +681,7 @@ class AppFixtures extends Fixture
                 'description' => ' 
                 La "Mateo\'s touch", souvent critiquée par la presse spécialisée, connaît un enthousiasme débordant du côté du public, et particulièrement en France où il fait salle comble à chaque passage.
 
-                Le pape du funk fait encore et toujours groover les salles.
-  ',
+                Le pape du funk fait encore et toujours groover les salles. ',
                 'image' => 'https://images.pexels.com/photos/8968215/pexels-photo-8968215.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Funk',
             ],
@@ -694,65 +689,58 @@ class AppFixtures extends Fixture
                 'name' => 'Japanese Man ',
                 'description' => ' 
                 A l\'occasion des 15 ans du Label, les membres de Japanese Man ,se retrouvent en Live pour une création commune autour de leur dernier album.
-                Pour présenter sur scène cet album et les classiques de chaque groupe, ils invitent des monstres de la scène hip-hop internationale, à les rejoindre pour un show exclusif et explosif, mixant les univers musicaux et visuels des 3 groupes entre HipHop, Electro Tropical et Scratch Music.
-  ',
+                Pour présenter sur scène cet album et les classiques de chaque groupe, ils invitent des monstres de la scène hip-hop internationale, à les rejoindre pour un show exclusif et explosif, mixant les univers musicaux et visuels des 3 groupes entre HipHop, Electro Tropical et Scratch Music.  ',
                 'image' => 'https://images.pexels.com/photos/1845085/pexels-photo-1845085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Hip-Hop',
             ],
             [
                 'name' => 'Burn DMC ',
                 'description' => ' 
-                Sans nul doute, le groupe de rap US qui, le premier aura marqué l\'histoire de ce mouvement en l\'amenant auprès d\'un large public.
-  ',
+                Sans nul doute, le groupe de rap US qui, le premier aura marqué l\'histoire de ce mouvement en l\'amenant auprès d\'un large public.  ',
                 'image' => 'https://images.pexels.com/photos/3656773/pexels-photo-3656773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Hip-Hop',
             ],
             [
                 'name' => 'Burn DMC ',
                 'description' => ' 
-                Burn DMC est un artiste à part. Il plane entre rêve et réalité dans l\'univers magique de son dernier album il développe des flows aériens et un lyrisme honnête et touchant.
-  ',
+                Burn DMC est un artiste à part. Il plane entre rêve et réalité dans l\'univers magique de son dernier album il développe des flows aériens et un lyrisme honnête et touchant.  ',
                 'image' => 'https://images.pexels.com/photos/3648641/pexels-photo-3648641.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Hip-Hop',
             ],
             [
                 'name' => 'Led Shiran ',
                 'description' => ' 
-                Et c\'est reparti pour une nouvelle tournée des stades ! Polly Siz présentera en concert les titres de son nouvel album mais aussi les tubes de ses précédents albums. Avec l\'énergie qu\'on lui connait, comptez sur le britannique pour faire de ses concerts des prestations qui resteront dans la mémoire de chaque spectateur. Prêt pour réserver votre billet ?
-  ',
+                Et c\'est reparti pour une nouvelle tournée des stades ! Polly Siz présentera en concert les titres de son nouvel album mais aussi les tubes de ses précédents albums. Avec l\'énergie qu\'on lui connait, comptez sur le britannique pour faire de ses concerts des prestations qui resteront dans la mémoire de chaque spectateur. Prêt pour réserver votre billet ?  ',
                 'image' => 'https://images.pexels.com/photos/838702/pexels-photo-838702.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Pop',
             ],
             [
                 'name' => 'Polly Siz ',
                 'description' => ' 
-                Curieuse et avide, elle a pu s’ouvrir à de nouvelles influences.Elle est revenue de New York avec des percussions mélangées aux programmations Hip Hop, des flows hypnotiques et des claps qui annoncent les sirènes des riffs de guitares émanant d’un garage de Brooklyn. Elle y a notamment fait la rencontre de Luke Jenner (the Rapture), grand chantre du rock electro, et des gamins du Hip Hop survitaminé de The Skins, qui ont été déterminants dans la couleur et la forme de cet opus.
-  ',
+                Curieuse et avide, elle a pu s’ouvrir à de nouvelles influences.Elle est revenue de New York avec des percussions mélangées aux programmations Hip Hop, des flows hypnotiques et des claps qui annoncent les sirènes des riffs de guitares émanant d’un garage de Brooklyn. Elle y a notamment fait la rencontre de Luke Jenner (the Rapture), grand chantre du rock electro, et des gamins du Hip Hop survitaminé de The Skins, qui ont été déterminants dans la couleur et la forme de cet opus.  ',
                 'image' => 'https://images.pexels.com/photos/3358299/pexels-photo-3358299.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Pop',
-            ],
+             ],
             [
                 'name' => 'Duo Lipo ',
                 'description' => ' 
-                Duo Lipo  est une chanteuse pop née à Londres. Après trois premiers singles très remarqués au Royaume-Uni, elle s\'embarque pour une tournée et rencontre le succès à l\'international .
-  ',
+                Duo Lipo  est une chanteuse pop née à Londres. Après trois premiers singles très remarqués au Royaume-Uni, elle s\'embarque pour une tournée et rencontre le succès à l\'international . ',
                 'image' => 'https://images.pexels.com/photos/1150836/pexels-photo-1150836.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Pop',
             ],
             [
                 'name' => 'Franck Maintenant ',
-                'description' => ' L\'odyssée pop de Franck Maintenant tient en grande partie au mélange unique de mélodies pop et de beats hyper-dansants .
-  ',
+                'description' => ' L\'odyssée pop de Franck Maintenant tient en grande partie au mélange unique de mélodies pop et de beats hyper-dansants .  ',
                 'image' => 'https://images.pexels.com/photos/167445/pexels-photo-167445.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Pop',
             ],
             [
                 'name' => 'Soldat Louise ',
-                'description' => ' Guitare acoustique et Voix. Nos trois inséparables sont délicieux à souhait, variés, un peu sucré-salé, très tendance dans un registre uniquement de variété française et on en redemande !
-  ',
+                'description' => ' Guitare acoustique et Voix. Nos trois inséparables sont délicieux à souhait, variés, un peu sucré-salé, très tendance dans un registre uniquement de variété française et on en redemande !',
                 'image' => 'https://images.pexels.com/photos/2277438/pexels-photo-2277438.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
                 'genre' => 'Pop',
             ],
+            [
                 'name' => 'David Guetto',
                 'description' => 'Toujours en tournée dans toute la France. Le pilier de la scène électronique Française, symbole de la French touch, mondialement connu, n\'a pas perdu de son talent et à encore beaucoup d\'énergie à revendre. On vous attend nombreux !',
                 'image' => 'https://cdn.pixabay.com/photo/2017/04/11/22/55/lightshow-2223127_960_720.jpg',
