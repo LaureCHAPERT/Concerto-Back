@@ -239,13 +239,13 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Trio',
                 'description' => 'Trio repart en campagne avec un nouvel album. Des nouvelles chansons aux allures métissées que l\'on pourra découvrir en concert dans les semaines et les mois à venir.',
-                'image' => 'https://cdn.pixabay.com/photo/2018/06/17/10/38/artist-3480274__340.jpg',
+                'image' => 'https://images.pexels.com/photos/1427368/pexels-photo-1427368.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Variété Française',
             ],
             [
                 'name' => 'Maestro',
                 'description' => 'Après plusieurs années de silence, le belge est de retour en 2022 avec la sortie en mars de son nouvel album . Côté concerts, Maestro fera la tournée des festivals durant l\'été 2022. Maestro est prêt à nous faire danser à nouveau !',
-                'image' => 'https://cdn.pixabay.com/photo/2020/07/23/11/58/man-5431169__340.jpg',
+                'image' => 'https://images.pexels.com/photos/7754770/pexels-photo-7754770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Variété Française',
             ],
             [
@@ -308,7 +308,7 @@ class AppFixtures extends Fixture
             [
                 'name' => 'JYL',
                 'description' => 'Le Marseillais Jyl réalise en 2014 l\'exploit de passer du rap souterrain à la lumière des meilleures ventes du top albums.',
-                'image' => 'https://images.pexels.com/photos/2067689/pexels-photo-2067689.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+                'image' => 'https://images.pexels.com/photos/802195/pexels-photo-802195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Hip-Hop',
             ],
 
@@ -429,19 +429,19 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Jason Khey',
                 'description' => 'Jason Khey nous présente son nouvel album à travers une tournée annoncée très colorée et très bien entourée puisqu\'il sera accompagné d\'une chorale gospel : on attend ça impatiemment',
-                'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
+                'image' => 'https://images.pexels.com/photos/11372431/pexels-photo-11372431.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
                 'genre' => 'Funk',
             ],
             [
                 'name' => 'Duluxe',
                 'description' => 'S\'inspirant librement des grands maitres du hip hop, du jazz et de la funk, Duluxe crée sa propre recette musicale, unique en son genre avec une seule constante : le groove ! Autant vous dire qu\'en concert Duluxe, ça remue.',
-                'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
+                'image' => 'https://images.pexels.com/photos/4142420/pexels-photo-4142420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Pop',
             ],
             [
                 'name' => 'JAVA',
                 'description' => 'Ce quatuor parisien  qui mélange rap et accordéon, cartonne avec des textes passés au vitriol. ',
-                'image' => 'https://cdn.pixabay.com/photo/2015/09/08/17/35/man-930397_960_720.jpg',
+                'image' => 'https://images.pexels.com/photos/838685/pexels-photo-838685.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Variété Française',
             ],
             [
