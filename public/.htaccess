@@ -33,7 +33,7 @@ DirectoryIndex index.php
     #   2. Strip the request uri the per-dir path and use ir as REQUEST_URI.
     #      This is documented in https://bit.ly/3zDm3SI ("What is matched?")
     #   3. Evaluate the RewriteCond, assuming your DocumentRoot is /var/www/html,
-    #      this .htaccess is in the /var/www/html/public dir and your request URI
+    #      this .htaccess is in the /var/www/html/public dir and your request URIhttps://github.com/BruguierJeremy/Concert-o-BACK
     #      is /public/hello/world:
     #      * strip per-dir prefix: /var/www/html/public/hello/world -> hello/world
     #      * applying pattern '.*' to uri 'hello/world'
