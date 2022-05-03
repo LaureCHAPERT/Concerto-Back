@@ -575,7 +575,7 @@ class AppFixtures extends Fixture
             [
                 'name' => 'Vivaldi et les quatres saisons',
                 'description' => '            
-                L\'Orchestre Ensemble reprend ce classique intemportel de Vivaldi.
+                L\'Orchestre Ensemble reprend ce classique intemporel de Vivaldi.
 ',
                 'image' => 'https://images.pexels.com/photos/2102568/pexels-photo-2102568.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
                 'genre' => 'Classique',
