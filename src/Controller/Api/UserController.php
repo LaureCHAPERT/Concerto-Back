@@ -10,6 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Serializer\Exception\NotEncodableValueException;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\ConstraintViolation;
@@ -25,7 +26,7 @@ class UserController extends AbstractController
     /**
      * Create user item
      *
-     * @Route("/user", name="api_user_post", methods={"POST"})
+     * @Route("/user/create", name="api_user_post", methods={"POST"})
      */
     public function createItem(Request $request, SerializerInterface $serializer, ManagerRegistry $doctrine, ValidatorInterface $validator, UserPasswordHasherInterface $userPasswordHasherInterface)
     {
@@ -69,5 +70,18 @@ class UserController extends AbstractController
             ],
             ['groups' => 'get_user_item']
         );
+    }
+
+    /**
+     * Login
+     * 
+     * @Route("/login", name="api_user_login", methods={"POST"})
+     */
+    public function login(AuthenticationUtils $authenticationUtils)
+    {
+
+        return $this->json([
+            'user' => $this->getUser()
+            ]);
     }
 }
