@@ -59,6 +59,8 @@ class UserController extends AbstractController
 
         $entityManager = $doctrine->getManager();
         $hashedPassword = $userPasswordHasherInterface->hashPassword($user, $user->getPassword());
+        $user->setActive(1);
+        $user->setRoles(['ROLE_USER']);
         $user->setPassword($hashedPassword);
         $entityManager->persist($user);
         $entityManager->flush();

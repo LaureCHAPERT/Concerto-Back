@@ -13,6 +13,18 @@ class MainController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('main/index.html.twig');
+        /**
+         * Retrieving user in session
+         * @var \App\Entity\User $user
+         */
+        $user = $this->getUser();
+        if (!in_array('ROLE_USER', $user->getRoles())) 
+        {
+            return $this->render('main/index.html.twig');
+        }
+        else 
+        {
+            return $this->redirectToRoute('app_logout', [], Response::HTTP_SEE_OTHER);
+        }
     }
 }
