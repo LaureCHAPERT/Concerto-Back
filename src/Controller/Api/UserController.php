@@ -77,11 +77,8 @@ class UserController extends AbstractController
      * 
      * @Route("/login", name="api_user_login", methods={"POST"})
      */
-    public function login(AuthenticationUtils $authenticationUtils)
+    public function login()
     {
 
-        return $this->json([
-            'user' => $this->getUser()
-            ]);
     }
 }
